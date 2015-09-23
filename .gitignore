@@ -1,1 +1,26 @@
+/blue_box_co/Procfile
+/blue_box_co/config
+/blue_box_co/.gitignore
+/blue_box_co/server.js
+/blue_box_co/karma.conf.js
+/blue_box_co/gulpfile.js
+/blue_box_co/packages
+/blue_box_co/node_modules
+/blue_box_co/.bowerrc
+/blue_box_co/LICENSE
+/blue_box_co/npm-shrinkwrap.json
+/blue_box_co/package.json
+/blue_box_co/logs
+/blue_box_co/README.md
+/blue_box_co/bower.json
+/blue_box_co/.slugignore
+/blue_box_co/Dockerfile
+/blue_box_co/.jshintrc
+/blue_box_co/tests
+/blue_box_co/.travis.yml
+/blue_box_co/gulp
+/blue_box_co/mean.json
+/blue_box_co/.csslintrc
+/blue_box_co/tools
+/blue_box_co/.jshintignore
 # Created by .ignore support plugin (hsz.mobi)
