@@ -1,2 +1,3 @@
-# dtcurrie_portfolio
-Web development portfolio for Devin T. Currie
+# Devin T. Currie - Web Developer
+
+A git repository for Devin T. Currie's Web Development Portfolio
