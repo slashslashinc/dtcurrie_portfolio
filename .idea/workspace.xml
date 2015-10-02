@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b79d835-2109-42f8-9c27-fe4d1239462e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dtcurrie_portfolio.iws" />
@@ -527,7 +526,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443744949140</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Init MEAN app">
+      <created>1443745053079</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1443745053079</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
