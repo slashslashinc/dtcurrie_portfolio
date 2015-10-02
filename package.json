@@ -1,0 +1,11 @@
+{
+  "name": "dtcurrie_portfolio",
+  "main": "server.js",
+  "dependencies": {
+    "express" : "latest",
+    "mongoose" : "latest",
+    "cors": "latest",
+    "body-parser" : "latest",
+    "method-override" : "latest"
+  }
+}
