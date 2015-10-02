@@ -5,4 +5,9 @@
 
 .fa-jumbo {
     font-size: 25rem;
+    padding-top: 10px;
+}
+
+.text-jumbo {
+    font-size: 2.5rem;
 }
