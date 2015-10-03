@@ -4,5 +4,6 @@
  */
 
 angular.module('TestCtrl', []).controller('TestController', function ($scope) {
+    $scope.page = "Test";
     $scope.tagline = 'this is a test page!';
 });

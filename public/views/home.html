@@ -12,70 +12,194 @@
     <div class="col-sm-10 col-sm-offset-1">
         <div class="col-sm-6">
             <button type="button" class="btn btn-jumbo btn-primary">
-                <i class="fa fa-file fa-jumbo center-block"></i>
+                <i class="fa fa-file fa-jumbo-xl center-block"></i>
                 <strong class="center-block text-jumbo">Resume</strong>
             </button>
         </div>
         <div class="col-sm-6">
             <button type="button" class="btn btn-jumbo btn-primary">
-                <i class="fa fa-desktop fa-jumbo center-block"></i>
+                <i class="fa fa-desktop fa-jumbo-xl center-block"></i>
                 <strong class="center-block text-jumbo">Web App Demo</strong>
             </button>
         </div>
     </div>
 </div>
 
-<h2 class="page-header">Specialties</h2>
+<h2 id="specs" class="page-header">Specialties</h2>
 <div class="row">
     <div class="col-sm-12">
-        <dl class="dl-horizontal">
-            <dt>User Interfaces</dt>
-            <dd>Designed to make it easy and enjoyable for your users to interact with your web site or application.
-                <ul>
-                    <li>Sleek single page web sites and applications mean less load times for your users</li>
-                    <li>Approachable designs based on Twitter Bootstrap, with the ability to create custom "themes" for
-                        your web site or application
-                    </li>
-                    <li>Responsive and cross-platform design means your users can view your web site or application on
-                        any browser on any device
-                    </li>
-                </ul>
-            </dd>
-            <dt>User Experience</dt>
-            <dd>Designed to turn your web site or application into a cohesive experience for the user, and not just
-                another tool.
-                <ul>
-                    <li>Focused on simple design to not "make the user think", and instead jump right into your web site
-                        or application
-                    </li>
-                    <li>Design that allows the user to explore your web page or application, or navigate to directly
-                        where they need to go in as few clicks as possible
-                    </li>
-                    <li>Use intuitive color schemes so users can understand buttons, alerts and notifications at
-                        glance
-                    </li>
-                </ul>
-            </dd>
-            <dt>Team Development</dt>
-            <dd>Working with artists to implement designs, engineers to implement features and users/testers
-                to improve the quality of your web site or application.
-                <ul>
-                    <li>Quick and iterative development using project management systems like AGILE</li>
-                    <li>Well maintained version control practices using technology like Git</li>
-                    <li>Clear and concise communication via text and voice</li>
-                </ul>
-            </dd>
-            <dt>Communication</dt>
-            <dd>Strong written and verbal communication skills help to understand the entire scope of your project and
-                schedule, design and develop around that.
-                <ul>
-                    <li>Capable of working remote using technologies like WebEx and to share ideas</li>
-                    <li>Understand conveying information in a variety of mediums</li>
-                    <li>Respond promptly and professionally, never leaving you in the dark</li>
-                </ul>
-            </dd>
-        </dl>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="ui">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#uiCollapse"
+                           aria-expanded="true" aria-controls="uiCollapse" onclick="return false">
+                            User Interfaces - Designed to be easy and enjoyable for users.
+                        </a>
+                    </h4>
+                </div>
+                <div id="uiCollapse" class="panel-collapse in" role="tabpanel" aria-labelledby="ui">
+                    <div class="panel-body">
+                        <ul>
+                            <li>Sleek single page web sites and applications mean less load times for your users</li>
+                            <li>Approachable designs based on Twitter Bootstrap, with the ability to create custom
+                                "themes" for
+                                your web site or application
+                            </li>
+                            <li>Responsive and cross-platform design means your users can view your web site or
+                                application on
+                                any browser on any device
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="ux">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#uxCollapse"
+                           aria-expanded="false" aria-controls="uxCollapse" onclick="return false">
+                            User Experience - Tailored to turn your project into a cohesive experience for users.
+                        </a>
+                    </h4>
+                </div>
+                <div id="uxCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ui">
+                    <div class="panel-body">
+                        <ul>
+                            <li>Focused on simple design to not "make the user think", and instead jump right into your
+                                web site or application
+                            </li>
+                            <li>Design that allows the user to explore your web page or application, or navigate to
+                                directly where they need to go in as few clicks as possible
+                            </li>
+                            <li>Use intuitive color schemes so users can understand buttons, alerts and notifications at
+                                glance
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="team">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#teamCollapse"
+                           aria-expanded="false" aria-controls="teamCollapse" onclick="return false">
+                            Team Development - Accustomed to work with designers, engineers and user/testers.
+                        </a>
+                    </h4>
+                </div>
+                <div id="teamCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ui">
+                    <div class="panel-body">
+                        <ul>
+                            <li>Implement designs and features according to specification</li>
+                            <li>Quick and iterative development using project management systems like AGILE</li>
+                            <li>Well maintained version control practices using technology like Git</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="comm">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#commCollapse"
+                           aria-expanded="false" aria-controls="commCollapse" onclick="return false">
+                            Communication - Written and verbal communication skills help to schedule, design and develop
+                            around your requirements.
+                        </a>
+                    </h4>
+                </div>
+                <div id="commCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ui">
+                    <div class="panel-body">
+                        <ul>
+                            <li>Capable of working remote using technologies like WebEx and to share ideas</li>
+                            <li>Understand conveying information in a variety of mediums</li>
+                            <li>Respond promptly and professionally, never leaving you in the dark</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<h2 class="page-header">Technologies</h2>
+<h2 id="techs" class="page-header">Technologies</h2>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="col-sm-6">
+            <div class="list-group">
+                <div class="list-group-item-heading"><h4>Languages</h4></div>
+                <a href="http://www.w3.org/TR/html5/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo fa-html5 center-block"></i>
+                    <strong class="text-jumbo center-block">HTML5</strong>
+                </a>
+                <a href="http://www.w3.org/TR/css-2010/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo fa-css3 center-block"></i>
+                    <strong class="text-jumbo center-block">CSS3</strong>
+                </a>
+                <a href="http://lesscss.org/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-less center-block"></i>
+                    <strong class="text-jumbo center-block">LESS</strong>
+                </a>
+                <a href="http://sass-lang.com/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-sass center-block"></i>
+                    <strong class="text-jumbo center-block">SASS/SCSS</strong>
+                </a>
+                <a href="https://www.javascript.com/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-javascript center-block"></i>
+                    <strong class="text-jumbo center-block">JavaScript</strong>
+                </a>
+                <a href="http://www.json.org/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-json center-block"></i>
+                    <strong class="text-jumbo center-block">JSON</strong>
+                </a>
+                <a href="https://www.python.org/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-python center-block"></i>
+                    <strong class="text-jumbo center-block">Python</strong>
+                </a>
+                <a href="https://msdn.microsoft.com/en-us/vstudio/hh341490.aspx" target="_blank"
+                   class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-csharp center-block"></i>
+                    <strong class="text-jumbo center-block">C#</strong>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="list-group">
+                <div class="list-group-item-heading"><h4>Frameworks/Libraries</h4></div>
+                <a href="https://angularjs.org/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-angular center-block"></i>
+                    <strong class="text-jumbo center-block">Angular</strong>
+                </a>
+                <a href="http://expressjs.com/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-express center-block"></i>
+                    <strong class="text-jumbo center-block">Express</strong>
+                </a>
+                <a href="https://nodejs.org/en/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-node center-block"></i>
+                    <strong class="text-jumbo center-block">Node</strong>
+                </a>
+                <a href="https://www.mongodb.org/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-mongo center-block"></i>
+                    <strong class="text-jumbo center-block">MongoDB</strong>
+                </a>
+                <a href="http://getbootstrap.com/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-bootstrap center-block"></i>
+                    <strong class="text-jumbo center-block">Bootstrap</strong>
+                </a>
+                <a href="https://jquery.com/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-jquery center-block"></i>
+                    <strong class="text-jumbo center-block">Jquery</strong>
+                </a>
+                <a href="https://www.djangoproject.com/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-django center-block"></i>
+                    <strong class="text-jumbo center-block">Django</strong>
+                </a>
+                <a href="http://www.asp.net/" target="_blank" class="btn btn-jumbo btn-default">
+                    <i class="fa fa-jumbo icon-dotnet center-block"></i>
+                    <strong class="text-jumbo center-block">ASP.NET</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

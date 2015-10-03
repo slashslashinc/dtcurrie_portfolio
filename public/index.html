@@ -11,21 +11,27 @@
     <!-- CSS -->
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/tech-icons.css">
     <link rel="stylesheet" href="css/theme.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- JS -->
-    <script src="libs/angular/angular.min.js"></script>
-    <script src="libs/angular-route/angular-route.min.js"></script>
-
-    <!-- ANGULAR -->
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script>
+        function goToByScroll(id) {
+            $('html,body').animate({scrollTop: $("#" + id).offset().top - 50}, 'fast');
+        }
+    </script>
+
+    <!-- ANGULAR -->
+    <script src="js/app.js"></script>
+    <script src="js/appRoutes.js"></script>
     <script src="js/controllers/MainCtrl.js"></script>
     <script src="js/controllers/TestCtrl.js"></script>
     <script src="js/services/TestService.js"></script>
-    <script src="js/appRoutes.js"></script>
-    <script src="js/app.js"></script>
 </head>
 <body ng-app="portfolio" ng-controller="MainController">
 <div class="container">
@@ -48,10 +54,10 @@
                     <li><a href="/">Web Application Demo</a></li>
                     <li><a href="/tests">Tests</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Specialties</a></li>
-                    <li><a href="/">Technologies</a></li>
-                    <li><a href="/">Examples</a></li>
+                <ul id="navDynamic" class="nav navbar-nav navbar-right" ng-repeat="link in navlinks">
+                    <li>
+                        <a data-target="{{link.id}}" onclick="goToByScroll($(this).data('target'));">{{link.value}}</a>
+                    </li>
                 </ul>
             </div>
         </div>
