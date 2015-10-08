@@ -17,3 +17,11 @@
 .text-jumbo {
     font-size: 2.5rem;
 }
+
+.portrait {
+    width: 30rem;
+    height: 30rem;
+    background-image: url('../img/portrait.jpg');
+    background-size: cover;
+    background-position-y: -5rem;
+}

@@ -14,6 +14,6 @@ angular.module('MainCtrl', [])
     })
     .directive('mainNav', function () {
         return {
-            templateUrl: 'navbar.html'
+            templateUrl: 'views/navbar.html'
         };
     });

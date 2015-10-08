@@ -22,22 +22,16 @@ app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(publicPath));
-// Configure Routes
-require('./../app/routes')(app);
 
 // Connect to mongoDB
 mongoose.connect(db.url);
 
-// DEBUG: add a test model
-var Test = require('mongoose').model('Test'),
-    test = new Test({name: "Server Initialization Test"});
-test.save(function (err) {
-    if (err) console.log("There was an error creating the test model");
-});
-// END DEBUG
-
-app.get("/", function (req, res) {
-    console.log("getting server")
-});
+//// DEBUG: add a test model
+//var Test = require('mongoose').model('Test'),
+//    test = new Test({name: "Server Initialization Test"});
+//test.save(function (err) {
+//    if (err) console.log("There was an error creating the test model");
+//});
+//// END DEBUG
 
 app.listen(port);
