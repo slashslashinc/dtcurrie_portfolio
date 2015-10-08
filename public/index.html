@@ -18,6 +18,7 @@
     <!-- JS -->
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 
     <!-- ANGULAR -->
     <script src="libs/angular/angular.js"></script>
@@ -26,12 +27,6 @@
     <script src="js/controllers/MainCtrl.js"></script>
     <script src="js/controllers/ResumeCtrl.js"></script>
 
-    <!-- PAGE BEHAVIOUR -->
-    <script>
-        function goToByScroll(id) {
-            $('html,body').animate({scrollTop: $("#" + id).offset().top - 50}, 'fast');
-        }
-    </script>
 </head>
 <body ng-app="portfolio" ng-controller="MainController">
 <div class="container">
@@ -40,8 +35,12 @@
     </div>
 
     <!-- ANGULAR DYNAMIC CONTENT -->
-    <div ui-view></div>
+    <div ui-view ng="showBackToTop()"></div>
 
+    <!-- FOOTER -->
+    <a href="#" id="back-to-top" class="text-primary" onclick="scrollToTop()">Back to
+        Top <i class="fa fa-arrow-up"></i>
+    </a>
 </div>
 </body>
 </html>

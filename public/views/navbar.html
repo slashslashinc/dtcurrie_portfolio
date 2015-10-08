@@ -16,7 +16,7 @@
         </ul>
         <ul id="navDynamic" class="nav navbar-nav navbar-right" ng-repeat="link in links">
             <li>
-                <a data-target="{{link.id}}" onclick="goToByScroll($(this).data('target'));">{{link.value}}</a>
+                <a data-target="{{link.id}}" onclick="scrollToSection($(this).data('target'));">{{link.value}}</a>
             </li>
         </ul>
     </div>
