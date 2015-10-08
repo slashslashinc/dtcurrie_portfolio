@@ -9,8 +9,8 @@ angular.module('ResumeCtrl', [])
         $scope.tagline = 'Devin T. Currie';
         $scope.links = [
             {"value": "References", "id": "refs"},
-            {"value": "Education", "id": "edu"},
             {"value": "Skills & Expertise", "id": "skex"},
+            {"value": "Education", "id": "edu"},
             {"value": "Experience", "id": "exp"},
             {"value": "Summary", "id": "sum"},
             {"value": "Download PDF", "id": "dl"}];

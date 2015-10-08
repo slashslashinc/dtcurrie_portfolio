@@ -26,9 +26,12 @@ app.use(express.static(publicPath));
 // Connect to mongoDB
 mongoose.connect(db.url);
 
+//// DEBUG: get test model
+//var Test = require('mongoose').model('Test');
+//// END DEBUG
+
 //// DEBUG: add a test model
-//var Test = require('mongoose').model('Test'),
-//    test = new Test({name: "Server Initialization Test"});
+//var test = new Test({name: "Server Initialization Test"});
 //test.save(function (err) {
 //    if (err) console.log("There was an error creating the test model");
 //});
