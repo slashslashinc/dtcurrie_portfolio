@@ -1,7 +1,8 @@
 /*
- public/js/script.js
+ public/js/raw/script.js
  Devin T. Currie
  */
+
 // scrolling animations
 $(window).scroll(function () {
     var windowTop = $(window).scrollTop(),
@@ -20,11 +21,19 @@ function scrollToTop() {
     $('html,body').animate({scrollTop: 0}, 'fast');
 }
 
+// scroll to top of window and reset animations
+function resetToTop() {
+    $(window).scrollTop(0);
+    $('.scrolling').each(function () {
+        $(this).removeClass('animated').css('opacity', 0);
+    });
+}
+
 // animate scrolling fade-ins
 function checkScrolling(windowBottom) {
     $('.scrolling').each(function () {
         if (!$(this).hasClass('animated')) {
-            var elementTop = $(this).offset().top + 20; // top of element plus 20px
+            var elementTop = $(this).offset().top + 100; // 20px below top of element
 
             // if the element is above the bottom of the window and isn't currently visible, show it
             if (windowBottom > elementTop && $(this).css("opacity") == 0) {
@@ -39,21 +48,27 @@ function checkScrolling(windowBottom) {
 function checkNavbar(windowTop) {
     var jumbo = $('.jumbotron-portrait'),
         navbar = $('.navbar');
-    if (jumbo && !$(navbar).hasClass('animated')) {
-        if (windowTop > (jumbo.offset().top + jumbo.height()) && navbar.css("opacity") == 0) {
-            // clone the element and add the animated class to trigger its animation
-            navbar.replaceWith($(navbar).clone(true).addClass('animated'));
+    if (jumbo) {
+        if (!$(navbar).hasClass('animated')) {
+            if (windowTop > (jumbo.offset().top + jumbo.height()) && navbar.css("opacity") == 0) {
+                // clone the element and add the animated class to trigger its animation
+                navbar.replaceWith($(navbar).clone(true).addClass('animated'));
+            }
+        } else {
+            if (windowTop < (jumbo.offset().top + jumbo.height()) && navbar.css("opacity") == 1) {
+                // replace animated and fade-in classes with fade-out
+                // then clone the element and the animated class to trigger its new animation
+                navbar.removeClass('animated fade-in').addClass('fade-out')
+                    .replaceWith($(navbar).clone(true).addClass('animated'));
+                // replace animated and fade-out classes with fade-in to prep it for a scrolling animation
+                setTimeout(function () {
+                    $('.navbar').removeClass('animated fade-out').addClass('fade-in');
+                }, 1000);
+            }
         }
     } else {
-        if (windowTop < (jumbo.offset().top + jumbo.height()) && navbar.css("opacity") == 1) {
-            // clone the element and add the animated class to trigger its animation
-            navbar.removeClass('animated fade-in').addClass('fade-out')
-                .replaceWith($(navbar).clone(true).addClass('animated'));
-            setTimeout(function () {
-                $('.navbar').removeClass('animated fade-out').addClass('fade-in');
-            }, 1000);
-
-        }
+        // clone the element and add the animated class to trigger its animation
+        navbar.replaceWith($(navbar).clone(true).addClass('animated'));
     }
 }
 

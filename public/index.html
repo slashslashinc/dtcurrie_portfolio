@@ -39,7 +39,6 @@
     <!-- Custom JavaScript
     ================================================== -->
     <script src="js/dtcurrie_portfolio.min.js"></script>
-    <script src="js/modernizr.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -58,11 +57,14 @@
 </div>
 
 <!-- ANGULAR DYNAMIC CONTENT -->
-<div ui-view></div>
+<div ui-view class="fade-in animated"></div>
 
 <!-- FOOTER -->
-<a href="#" id="back-to-top" class="text-primary" onclick="scrollToTop()"><i
-        class="fa fa-arrow-circle-o-up"></i>
+<a href="#" id="back-to-top-fixed" class="hidden-xs visible-sm visible-md visible-lg text-primary"
+   onclick="scrollToTop()"><i class="fa fa-2x fa-arrow-circle-o-up"></i>
+</a>
+<a href="#" id="back-to-top-static" class="visible-xs hidden-sm hidden-md hidden-lg text-primary"
+   onclick="scrollToTop()"><i class="fa fa-2x fa-arrow-circle-o-up"></i>
 </a>
 </body>
 </html>

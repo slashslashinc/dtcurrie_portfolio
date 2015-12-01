@@ -11,17 +11,13 @@ var portfolio = angular.module("portfolio", [
 angular.module('MainCtrl', [])
     .controller('MainController', function ($scope, $rootScope) {
         $scope.page = "Home";
-        $scope.tagline = 'Web Developer focused on creating sleek and intuitive user interfaces for both websites and web applications';
         $scope.links = [
             {"value": "Examples", "id": "exams"},
             {"value": "Technology", "id": "techs"},
             {"value": "Specialities", "id": "specs"}];
+
         $rootScope.$on('$viewContentLoaded', function () {
-            if (document.body.scrollHeight > window.innerHeight) {
-                document.getElementById('back-to-top').style.visibility = "visible";
-            } else {
-                document.getElementById('back-to-top').style.visibility = "hidden";
-            }
+            checkBackToTop();
         });
     })
     .directive('mainNav', function () {
@@ -33,7 +29,6 @@ angular.module('MainCtrl', [])
 angular.module('ResumeCtrl', [])
     .controller('ResumeController', function ($scope) {
         $scope.page = "Resume";
-        $scope.tagline = 'Devin T. Currie';
         $scope.links = [
             {"value": "References", "id": "refs"},
             {"value": "Skills & Expertise", "id": "skex"},
@@ -54,6 +49,9 @@ portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider
             controller: "MainController",
             onEnter: function () {
                 animateOnLoad();
+            },
+            onExit: function(){
+                resetToTop();
             }
         })
         .state('resume', {
@@ -62,6 +60,9 @@ portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider
             controller: "ResumeController",
             onEnter: function () {
                 animateOnLoad();
+            },
+            onExit: function(){
+                resetToTop();
             }
         });
     // use the HTML5 History API

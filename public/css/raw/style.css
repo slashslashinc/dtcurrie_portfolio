@@ -37,15 +37,6 @@
     height: auto;
 }
 
-.skew {
-    position: relative;
-    height: 15.35rem;
-    width: 100%;
-    top: 58rem;
-    transform: skewY(4deg);
-    background-color: #fff;
-}
-
 .ccu {
     width: 32rem;
     height: 8rem;
@@ -54,9 +45,13 @@
     display: inline-block;
 }
 
-#back-to-top {
+#back-to-top-fixed {
     position: fixed;
-    background-color: #eee;
     bottom: 0;
     right: 0;
+}
+
+#back-to-top-static {
+    position: static;
+    float: right;
 }

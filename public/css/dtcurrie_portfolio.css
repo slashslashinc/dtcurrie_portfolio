@@ -129,14 +129,14 @@
   background-color: #39b3d7;
 }
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu {
-  background-color: #e99002;
+  background-color: #f5de31;
   border-color: transparent;
 }
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu > li > a {
   color: #fff;
 }
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu > li > a:hover {
-  background-color: #c17702;
+  background-color: #f1d70c;
 }
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu {
   background-color: #f04124;
@@ -150,6 +150,12 @@
 }
 .lead {
   color: #6f6f6f;
+}
+.text-default {
+  color: #333333;
+}
+.text-muted {
+  color: #999999;
 }
 cite {
   font-style: italic;
@@ -175,22 +181,40 @@ blockquote small {
 }
 @media (max-width: 480px) {
   .jumbotron-portrait {
-    background-position-x: -115rem;
+    background-position-x: -100rem;
+    background-position-y: -20rem;
+  }
+  .jumbotron-portrait .slant-left {
+    padding-top: 15rem;
+  }
+}
+@media (min-width: 480px) {
+  .jumbotron-portrait .slant-left {
+    padding-top: 10rem;
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .jumbotron-portrait {
     background-position-x: -80rem;
+    background-position-y: -35rem;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .jumbotron-portrait {
     background-position-x: -90rem;
+    background-position-y: -35rem;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .jumbotron-portrait {
-    background-position-x: -75rem;
+    background-position-x: -50rem;
+    background-position-y: -35rem;
+  }
+}
+@media (min-width: 1200px) {
+  .jumbotron-portrait {
+    background-position-x: -25rem;
+    background-position-y: -35rem;
   }
 }
 .jumbotron-portrait:after {
@@ -211,24 +235,17 @@ blockquote small {
 .jumbotron-portrait.top {
   margin-top: 0 !important;
 }
+.jumbotron-portrait .section-icon:hover .fa-stack-2x {
+  color: #e6e6e6;
+}
+.jumbotron-portrait .section-icon:hover .fa-stack-2x.text-primary {
+  color: #009283;
+}
+.jumbotron-portrait .section-icon:hover .fa-stack-2x.text-warning {
+  color: #dec50b;
+}
 .jumbotron.top {
   margin-top: 45px;
-}
-@media (max-width: 991px) {
-  .jumbotron.top .slant-left {
-    padding-top: 5rem;
-  }
-  .jumbotron.top .slant-right {
-    padding-top: 10rem;
-  }
-}
-@media (min-width: 991px) {
-  .jumbotron.top .slant-left {
-    padding-top: 10rem;
-  }
-  .jumbotron.top .slant-right {
-    padding-top: 20rem;
-  }
 }
 .jumbotron.banner {
   width: 100%;

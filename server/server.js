@@ -4,7 +4,7 @@ var express = require("express"),
     bodyParser = require("body-parser"),
     methodOverride = require('method-override'),
     app = express(),
-    port = process.env.PORT || 8080,    // Port
+    port = process.env.PORT || 8000,    // Port
     path = require('path'),
     publicPath = path.join(__dirname, '../public');
 

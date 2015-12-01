@@ -224,6 +224,14 @@
   color: @gray;
 }
 
+.text-default {
+  color: @text-color;
+}
+
+.text-muted {
+  color: @gray-light;
+}
+
 cite {
   font-style: italic;
 }
@@ -254,22 +262,41 @@ blockquote {
     overflow: hidden;
 
     @media (max-width: @screen-xs-min) {
-      background-position-x: -115rem;
+      background-position-x: -100rem;
+      background-position-y: -20rem;
+
+      .slant-left {
+        padding-top: 15rem;
+      }
+    }
+
+    @media (min-width: @screen-xs-min) {
+      .slant-left {
+        padding-top: 10rem;
+      }
     }
 
     @media (min-width: @screen-xs-min) and  (max-width: @screen-sm-min) {
       background-position-x: -80rem;
+      background-position-y: -35rem;
     }
 
     @media (min-width: @screen-sm-min) and  (max-width: @screen-md-min) {
       background-position-x: -90rem;
+      background-position-y: -35rem;
     }
 
     @media (min-width: @screen-md-min) and (max-width: @screen-lg-min) {
-      background-position-x: -75rem;
+      background-position-x: -50rem;
+      background-position-y: -35rem;
     }
 
-    &:after{
+    @media (min-width: @screen-lg-min) {
+      background-position-x: -25rem;
+      background-position-y: -35rem;
+    }
+
+    &:after {
       content: "";
       position: absolute;
       z-index: 1;
@@ -288,30 +315,22 @@ blockquote {
     &.top {
       margin-top: 0 !important;
     }
+
+    .section-icon:hover {
+      .fa-stack-2x {
+        color: darken(#fff, 10%);
+        &.text-primary {
+          color: darken(@brand-primary, 8%);
+        }
+        &.text-warning {
+          color: darken(@brand-warning, 12%);
+        }
+      }
+    }
   }
 
   &.top {
     margin-top: @navbar-height;
-
-    @media (max-width: @screen-sm-max) {
-      .slant-left {
-        padding-top: 5rem;
-      }
-
-      .slant-right {
-        padding-top: 10rem;
-      }
-    }
-
-    @media (min-width: @screen-sm-max) {
-      .slant-left {
-        padding-top: 10rem;
-      }
-
-      .slant-right {
-        padding-top: 20rem;
-      }
-    }
   }
 
   &.banner {
