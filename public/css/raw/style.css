@@ -1,0 +1,62 @@
+.btn-jumbo {
+    height: 100%;
+    width: 100%;
+}
+
+.fa-jumbo {
+    font-size: 10rem;
+    padding-top: 5px;
+}
+
+.fa-jumbo-xl {
+    font-size: 25rem;
+    padding-top: 10px;;
+}
+
+.text-jumbo {
+    font-size: 2.5rem;
+}
+
+.border-primary {
+    border-color: #00bba8;
+}
+
+.panel-heading > h3 {
+    margin-top: 10px;
+}
+
+.portrait {
+    width: 30rem;
+    height: 30rem;
+    background-image: url('../imgs/portrait.jpg');
+    background-size: cover;
+    background-position-y: -5rem;
+}
+
+.jumbotron .portrait {
+    height: auto;
+}
+
+.skew {
+    position: relative;
+    height: 15.35rem;
+    width: 100%;
+    top: 58rem;
+    transform: skewY(4deg);
+    background-color: #fff;
+}
+
+.ccu {
+    width: 32rem;
+    height: 8rem;
+    background-image: url('../imgs/ccu_logo.png');
+    background-size: cover;
+    display: inline-block;
+}
+
+#back-to-top {
+    position: fixed;
+    background-color: #eee;
+    bottom: 0;
+    right: 0;
+}

@@ -1,11 +1,44 @@
 {
   "name": "dtcurrie_portfolio",
+  "version": "0.2.0",
   "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
   "dependencies": {
-    "express" : "latest",
-    "mongoose" : "latest",
+    "express": "latest",
     "cors": "latest",
-    "body-parser" : "latest",
-    "method-override" : "latest"
+    "body-parser": "latest",
+    "method-override": "latest",
+    "grunt": "latest",
+    "btoa": "latest",
+    "glob": "latest",
+    "grunt": "latest",
+    "grunt-autoprefixer": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-compress": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-csslint": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-htmlmin": "latest",
+    "grunt-contrib-jade": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-qunit": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-csscomb": "latest",
+    "grunt-exec": "latest",
+    "grunt-html": "latest",
+    "grunt-jekyll": "latest",
+    "grunt-jscs": "latest",
+    "grunt-saucelabs": "latest",
+    "grunt-sed": "latest",
+    "load-grunt-tasks": "latest",
+    "markdown-it": "latest",
+    "npm-shrinkwrap": "latest",
+    "time-grunt": "latest"
   }
 }

@@ -1,17 +1,10 @@
-/*
- server/server.js
- Devin T. Currie
- */
-
 // Modules
 var express = require("express"),
-    mongoose = require("mongoose"),
     cors = require("cors"),
     bodyParser = require("body-parser"),
     methodOverride = require('method-override'),
     app = express(),
-    db = require('./../config/db'),        // Config
-    port = process.env.PORT || 3000,    // Port
+    port = process.env.PORT || 8080,    // Port
     path = require('path'),
     publicPath = path.join(__dirname, '../public');
 
@@ -23,18 +16,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(publicPath));
 
-// Connect to mongoDB
-mongoose.connect(db.url);
+// get public directory paths
+app.use('/js', express.static(publicPath + '/js'));
+app.use('/css', express.static(publicPath + '/css'));
+app.use('/img', express.static(publicPath + '/img'));
+app.use('/libs', express.static(publicPath + '/libs'));
+app.use('/views', express.static(publicPath + '/views'));
 
-//// DEBUG: get test model
-//var Test = require('mongoose').model('Test');
-//// END DEBUG
-
-//// DEBUG: add a test model
-//var test = new Test({name: "Server Initialization Test"});
-//test.save(function (err) {
-//    if (err) console.log("There was an error creating the test model");
-//});
-//// END DEBUG
+app.all('/*', function(req, res) {
+    // Just send the index.html for other files to support HTML5Mode
+    res.sendFile('/index.html', { root: publicPath });
+});
 
 app.listen(port);

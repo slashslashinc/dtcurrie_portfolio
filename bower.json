@@ -1,9 +1,10 @@
 {
   "name": "dtcurrie_portfolio",
   "dependencies": {
-    "bootstrap": "latest",
-    "font-awesome": "latest",
     "angular": "latest",
-    "angular-route": "latest"
+    "angular-ui-router": "latest",
+    "jquery": "latest",
+    "bootstrap": "latest",
+    "font-awesome": "latest"
   }
 }
