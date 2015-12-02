@@ -220,18 +220,6 @@
 
 // Typography =================================================================
 
-.lead {
-  color: @gray;
-}
-
-.text-default {
-  color: @text-color;
-}
-
-.text-muted {
-  color: @gray-light;
-}
-
 cite {
   font-style: italic;
 }
@@ -247,6 +235,82 @@ blockquote {
   small {
     font-size: @font-size-small;
     font-weight: 300;
+  }
+}
+
+.text-default {
+  color: @text-color;
+}
+
+.text-muted {
+  color: @gray-light;
+}
+
+.page-header {
+  border: none;
+  padding-bottom: 0;
+  margin: 4rem 0 2rem;
+
+  h2 {
+    vertical-align: text-bottom;
+    display: inline-block;
+  }
+
+  .flag {
+    width: 4rem;
+    height: 4.5rem;
+    position: relative;
+    background: #00bba8;
+    color: #fff;
+    border-radius: 3px;
+
+    &.muted {
+      background-color: @gray-lighter;
+    }
+
+    &.right {
+      .flag-pole {
+        margin-left: -1rem;
+      }
+      .flag-end {
+        left: -0.5rem;
+      }
+    }
+
+    .flag-pole {
+      position: absolute;
+      width: 1000rem;
+      height: 0.3rem;
+      background-color: @gray-light;
+      margin-left: -995rem;
+      margin-top: -0.2rem;
+
+      .flag-end {
+        position: absolute;
+        right: -0.5rem;
+        top: -0.25rem;
+        font-size: 0.75rem;
+      }
+    }
+
+    .flag-icon {
+      position: absolute;
+      margin-top: 0.5rem;
+      left: 14.5%;
+
+      &.fa-bolt {
+
+        left: 33%;
+      }
+    }
+  }
+  .flag:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    border-bottom: 1rem solid #fff;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
   }
 }
 
@@ -543,5 +607,73 @@ input[type="checkbox"] {
 .modal {
   .close {
     color: @text-color;
+  }
+}
+
+.list-box {
+  width: 100%;
+
+  .list-box-heading {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .list-box-body {
+    ul {
+      font-size: 1.25rem;
+    }
+    @media (max-width: @screen-sm-max) {
+      text-align: center;
+      width: 100%;
+    }
+    @media (min-width: @screen-md-min) {
+      text-align: justify;
+      width: 60%;
+    }
+  }
+
+  .list-box-icon {
+    &-stack, &-inline {
+      text-align: center;
+
+      .fa-stack-1x {
+        font-size: 5.75rem;
+      }
+    }
+    &-stack {
+      width: 100%;
+    }
+    &-inline {
+      width: 40%;
+    }
+  }
+
+  &-left {
+    .list-box-body {
+      @media (min-width: @screen-md-min) {
+        float: left;
+      }
+    }
+
+    .list-box-icon {
+      &-inline {
+        float: right;
+      }
+    }
+  }
+
+  &-right {
+    .list-box-body {
+      @media (min-width: @screen-md-min) {
+        float: right;
+      }
+    }
+
+    .list-box-icon {
+      &-inline {
+        float: left;
+      }
+    }
   }
 }

@@ -148,15 +148,6 @@
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu > li > a:hover {
   background-color: #dc2c0f;
 }
-.lead {
-  color: #6f6f6f;
-}
-.text-default {
-  color: #333333;
-}
-.text-muted {
-  color: #999999;
-}
 cite {
   font-style: italic;
 }
@@ -170,6 +161,68 @@ blockquote.pull-right {
 blockquote small {
   font-size: 12px;
   font-weight: 300;
+}
+.text-default {
+  color: #333333;
+}
+.text-muted {
+  color: #999999;
+}
+.page-header {
+  border: none;
+  padding-bottom: 0;
+  margin: 4rem 0 2rem;
+}
+.page-header h2 {
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+.page-header .flag {
+  width: 4rem;
+  height: 4.5rem;
+  position: relative;
+  background: #00bba8;
+  color: #fff;
+  border-radius: 3px;
+}
+.page-header .flag.muted {
+  background-color: #eeeeee;
+}
+.page-header .flag.right .flag-pole {
+  margin-left: -1rem;
+}
+.page-header .flag.right .flag-end {
+  left: -0.5rem;
+}
+.page-header .flag .flag-pole {
+  position: absolute;
+  width: 1000rem;
+  height: 0.3rem;
+  background-color: #999999;
+  margin-left: -995rem;
+  margin-top: -0.2rem;
+}
+.page-header .flag .flag-pole .flag-end {
+  position: absolute;
+  right: -0.5rem;
+  top: -0.25rem;
+  font-size: 0.75rem;
+}
+.page-header .flag .flag-icon {
+  position: absolute;
+  margin-top: 0.5rem;
+  left: 14.5%;
+}
+.page-header .flag .flag-icon.fa-bolt {
+  left: 33%;
+}
+.page-header .flag:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1rem solid #fff;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
 }
 .jumbotron-portrait {
   position: relative;
@@ -398,5 +451,58 @@ input[type="checkbox"] {
 }
 .modal .close {
   color: #333333;
+}
+.list-box {
+  width: 100%;
+}
+.list-box .list-box-heading {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.list-box .list-box-body ul {
+  font-size: 1.25rem;
+}
+@media (max-width: 991px) {
+  .list-box .list-box-body {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .list-box .list-box-body {
+    text-align: justify;
+    width: 60%;
+  }
+}
+.list-box .list-box-icon-stack,
+.list-box .list-box-icon-inline {
+  text-align: center;
+}
+.list-box .list-box-icon-stack .fa-stack-1x,
+.list-box .list-box-icon-inline .fa-stack-1x {
+  font-size: 5.75rem;
+}
+.list-box .list-box-icon-stack {
+  width: 100%;
+}
+.list-box .list-box-icon-inline {
+  width: 40%;
+}
+@media (min-width: 992px) {
+  .list-box-left .list-box-body {
+    float: left;
+  }
+}
+.list-box-left .list-box-icon-inline {
+  float: right;
+}
+@media (min-width: 992px) {
+  .list-box-right .list-box-body {
+    float: right;
+  }
+}
+.list-box-right .list-box-icon-inline {
+  float: left;
 }
 /*# sourceMappingURL=dtcurrie_portfolio-theme.css.map */

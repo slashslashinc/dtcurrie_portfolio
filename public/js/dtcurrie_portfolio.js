@@ -3,6 +3,16 @@
  Devin T. Currie
  */
 
+//  thumbnail light box click event
+$(document).on("click", '.thumbnail', function (event) {
+    event.preventDefault();
+    $('.modal-body').empty();
+    var title = $(this).parent('a').attr("title");
+    $('.modal-title').html(title);
+    $($(this).parents('div').html()).appendTo('.modal-body');
+    $('#thumbnailModal').modal({show: true});
+});
+
 // scrolling animations
 $(window).scroll(function () {
     var windowTop = $(window).scrollTop(),

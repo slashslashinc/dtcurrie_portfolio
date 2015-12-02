@@ -109,111 +109,144 @@
     <!-- TODO: Add Three teal circles with white icons for the three main page sections when nav is hidden in jumbotron -->
 </div>
 <div class="container fade-in scrolling">
-    <h2 id="specs" class="page-header">Specialties</h2>
+    <div id="specs" class="page-header">
+        <ul class="list-unstyled list-inline">
+            <li>
+                <div class="flag">
+                    <div class="flag-pole">
+                        <i class="flag-end fa fa-circle text-warning"></i>
+                    </div>
+                    <i class="flag-icon fa fa-2x fa-bolt text-warning"></i>
+                </div>
+            </li>
+            <li>
+                <h2>Specialties</h2>
+            </li>
+        </ul>
+    </div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="ui">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#uiCollapse"
-                               aria-expanded="true" aria-controls="uiCollapse" onclick="return false">
-                                User Interfaces - Designed to be easy and enjoyable for users.
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="uiCollapse" class="panel-collapse in" role="tabpanel" aria-labelledby="ui">
-                        <div class="panel-body">
-                            <ul>
-                                <li>Sleek single page web sites and applications mean less load times for your users
-                                </li>
-                                <li>Approachable designs based on Twitter Bootstrap, with the ability to create custom
-                                    "themes" for
-                                    your web site or application
-                                </li>
-                                <li>Responsive and cross-platform design means your users can view your web site or
-                                    application on
-                                    any browser on any device
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-xs-12 col-md-6 text-center">
+        <div class="list-box list-box-left">
+            <h2 class="list-box-heading">
+                User Interfaces
+            </h2>
 
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="ux">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#uxCollapse"
-                               aria-expanded="false" aria-controls="uxCollapse" onclick="return false">
-                                User Experience - Tailored to turn your project into a cohesive experience for users.
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="uxCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ui">
-                        <div class="panel-body">
-                            <ul>
-                                <li>Focused on simple design to not "make the user think", and instead jump right into
-                                    your
-                                    web site or application
-                                </li>
-                                <li>Design that allows the user to explore your web page or application, or navigate to
-                                    directly where they need to go in as few clicks as possible
-                                </li>
-                                <li>Use intuitive color schemes so users can understand buttons, alerts and
-                                    notifications at
-                                    glance
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="team">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#teamCollapse"
-                               aria-expanded="false" aria-controls="teamCollapse" onclick="return false">
-                                Team Development - Accustomed to work with designers, engineers and user/testers.
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="teamCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ui">
-                        <div class="panel-body">
-                            <ul>
-                                <li>Implement designs and features according to specification</li>
-                                <li>Quick and iterative development using project management systems like AGILE</li>
-                                <li>Well maintained version control practices using technology like Git</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="comm">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#commCollapse"
-                               aria-expanded="false" aria-controls="commCollapse" onclick="return false">
-                                Communication - Written and verbal communication skills help to schedule, design and
-                                develop
-                                around your requirements.
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="commCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ui">
-                        <div class="panel-body">
-                            <ul>
-                                <li>Capable of working remote using technologies like WebEx and to share ideas</li>
-                                <li>Understand conveying information in a variety of mediums</li>
-                                <li>Respond promptly and professionally, never leaving you in the dark</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="list-box-icon-stack fa-stack fa-5x visible-xs visible-sm hidden-md hidden-lg">
+                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                <i class="fa fa-stack-1x fa-tasks text-warning"></i>
+            </div>
+
+            <div class="list-box-body">
+                <ul>
+                    <li>Sleek single page web sites and applications mean less load times for your users</li>
+                    <li>
+                        Approachable design, with the ability to create custom "themes" for your web site or application
+                    </li>
+                    <li>Responsive and cross-platform design viewable on most browsers and devices.</li>
+                </ul>
+            </div>
+
+            <div class="list-box-icon-inline fa-stack fa-5x hidden-xs hidden-sm visible-md visible-lg">
+                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                <i class="fa fa-stack-1x fa-tasks text-warning"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6 text-center">
+        <div class="list-box list-box-right">
+            <h2 class="list-box-heading">
+                User Experience
+            </h2>
+
+            <div class="list-box-icon-inline fa-stack fa-5x hidden-xs hidden-sm visible-md visible-lg">
+                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                <i class="fa fa-stack-1x fa-users text-warning"></i>
+            </div>
+
+            <div class="list-box-icon-stack fa-stack fa-5x visible-xs visible-sm hidden-md hidden-lg">
+                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                <i class="fa fa-stack-1x fa-users text-warning"></i>
+            </div>
+
+            <div class="list-box-body">
+                <ul>
+                    <li>Focused on simplicity, allowing users to jump into your web site or application</li>
+                    <li>Design that balances user exploration with efficient navigation</li>
+                    <li>Intuitive color schemes let users understand your UI at a glance</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6 text-center">
+        <div class="list-box list-box-left">
+            <h2 class="list-box-heading">
+                Team Development
+            </h2>
+
+            <div class="list-box-icon-stack fa-stack fa-5x visible-xs visible-sm hidden-md hidden-lg">
+                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                <i class="fa fa-stack-1x fa-puzzle-piece text-warning"></i>
+            </div>
+
+            <div class="list-box-body">
+                <ul>
+                    <li>Implement designs and features according to specification</li>
+                    <li>Quick and iterative development using project management systems like AGILE</li>
+                    <li>Well maintained version control practices using technology like Git</li>
+                </ul>
+            </div>
+
+            <div class="list-box-icon-inline fa-stack fa-5x hidden-xs hidden-sm visible-md visible-lg">
+                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                <i class="fa fa-stack-1x fa-puzzle-piece text-warning"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6 text-center">
+        <div class="list-box list-box-right">
+            <h2 class="list-box-heading">
+                Communication
+            </h2>
+
+            <div class="list-box-icon-inline fa-stack fa-5x hidden-xs hidden-sm visible-md visible-lg">
+                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                <i class="fa fa-stack-1x fa-comments text-warning"></i>
+            </div>
+
+            <div class="list-box-icon-stack fa-stack fa-5x visible-xs visible-sm hidden-md hidden-lg">
+                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                <i class="fa fa-stack-1x fa-comments text-warning"></i>
+            </div>
+
+            <div class="list-box-body">
+                <ul>
+                    <li>Capable of working remote using technologies like WebEx to share ideas</li>
+                    <li>Understand conveying information in a variety of mediums</li>
+                    <li>Respond promptly and professionally, never leaving you in the dark</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 <div class="container fade-in scrolling">
-    <h2 id="techs" class="page-header">Technologies</h2>
+    <div id="techs" class="page-header">
+        <ul class="list-unstyled list-inline">
+            <li>
+                <div class="flag muted">
+                    <div class="flag-pole">
+                        <i class="flag-end fa fa-circle text-warning"></i>
+                    </div>
+                    <i class="flag-icon fa fa-2x fa-code text-primary"></i>
+                </div>
+            </li>
+            <li>
+                <h2>Technologies</h2>
+            </li>
+        </ul>
+    </div>
 
     <div class="row">
         <div class="col-sm-12">
@@ -296,8 +329,34 @@
     </div>
 </div>
 <div class="container fade-in scrolling">
-    <h2 id="exams" class="page-header">Examples</h2>
-    <!-- TODO: Take screenshots of Transcirrus UI: Good dashboard shot with meters, good dashboard shot showing usability with color coding etc... and a shot showing theming (2x2 square of all the TC themes) -->
+    <div id="exams" class="page-header">
+        <ul class="list-unstyled list-inline">
+            <li>
+                <div class="flag">
+                    <div class="flag-pole">
+                        <i class="flag-end fa fa-circle text-warning"></i>
+                    </div>
+                    <i class="flag-icon fa fa-2x fa-desktop"></i>
+                </div>
+            </li>
+            <li>
+                <h2>Examples</h2>
+            </li>
+        </ul>
+    </div>
     <div class="row">
+        <div class="lead">TransCirrus Company Website</div>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6"><a href="" title="TransCirrus 'Hero' Header"><img
+                        src="../imgs/transcirrus_header.png" class="thumbnail img-responsive"></a></div>
+                <div class="col-xs-12 col-sm-6"><a href="" title="TransCirrus Product"><img
+                        src="../imgs/transcirrus_product.png" class="thumbnail img-responsive"></a></div>
+                <div class="col-xs-12 col-sm-6"><a href="" title="TransCirrus Contact"><img
+                        src="../imgs/transcirrus_contact.png" class="thumbnail img-responsive"></a></div>
+                <div class="col-xs-12 col-sm-6"><a href="" title="TransCirrus Mobile"><img
+                        src="../imgs/transcirrus_mobile.png" class="thumbnail img-responsive"></a></div>
+            </div>
+        </div>
     </div>
 </div>

@@ -242,6 +242,14 @@
 }
 
 
+body.modal-open {
+    overflow: visible;
+}
+
+#thumbnailModal > .modal-dialog {
+    width: auto !important;
+}
+
 .btn-jumbo {
     height: 100%;
     width: 100%;
