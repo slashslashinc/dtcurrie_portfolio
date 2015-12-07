@@ -1,7 +1,7 @@
 <!-- public/views/index.html - Devin T. Currie -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="portfolio">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,19 +68,40 @@
     </div>
 </div>
 
-<body ng-app="portfolio" ng-controller="MainController">
+<body ng-app="portfolio">
 <!-- NAV -->
-<div main-nav class="navbar navbar-inverse navbar-fixed-top fade-in" role="navigation">
+<div id="mainNav" class="navbar navbar-inverse navbar-fixed-top hidden-animated" role="navigation"
+     ng-controller="NavController" data-page="{{page}}">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home">dtc</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="resume">Resume</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li main-nav ng-repeat="link in links"></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <!-- ANGULAR DYNAMIC CONTENT -->
-<div ui-view class="fade-in animated"></div>
+<div ui-view></div>
 
 <!-- FOOTER -->
-<a href="#" id="back-to-top-fixed" class="hidden-xs visible-sm visible-md visible-lg text-primary"
+<a href="#" id="back-to-top-fixed" class="hidden-xs visible-sm visible-md visible-lg text-primary fade-in"
    onclick="scrollToTop()"><i class="fa fa-2x fa-arrow-circle-o-up"></i>
 </a>
-<a href="#" id="back-to-top-static" class="visible-xs hidden-sm hidden-md hidden-lg text-primary"
+<a href="#" id="back-to-top-static" class="visible-xs hidden-sm hidden-md hidden-lg text-primary fade-in"
    onclick="scrollToTop()"><i class="fa fa-2x fa-arrow-circle-o-up"></i>
 </a>
 </body>

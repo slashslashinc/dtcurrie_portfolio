@@ -3,6 +3,12 @@
  Devin T. Currie
  */
 
+// get scope
+var scope;
+$(function () {
+    scope = angular.element("html").scope();
+});
+
 //  thumbnail light box click event
 $(document).on("click", '.thumbnail', function (event) {
     event.preventDefault();
@@ -15,10 +21,8 @@ $(document).on("click", '.thumbnail', function (event) {
 
 // scrolling animations
 $(window).scroll(function () {
-    var windowTop = $(window).scrollTop(),
-        windowBottom = $(window).scrollTop() + $(window).height();  // bottom of window
-    checkNavbar(windowTop);
-    checkScrolling(windowBottom);
+    checkNavbar();
+    checkScrollingFadeIns();
 });
 
 // animate scroll to target element by id
@@ -40,45 +44,47 @@ function resetToTop() {
 }
 
 // animate scrolling fade-ins
-function checkScrolling(windowBottom) {
+function checkScrollingFadeIns() {
     $('.scrolling').each(function () {
-        if (!$(this).hasClass('animated')) {
-            var elementTop = $(this).offset().top + 100; // 20px below top of element
+        if (!$(this).hasClass('fade-in')) {
+            var elementTop = $(this).offset().top + 100,                   // 20px below top of element
+                windowBottom = $(window).scrollTop() + $(window).height(); // bottom of window
 
             // if the element is above the bottom of the window and isn't currently visible, show it
             if (windowBottom > elementTop && $(this).css("opacity") == 0) {
                 // clone the element and add the animated class to trigger its animation
-                $(this).replaceWith($(this).clone(true).addClass('animated'));
+                $(this).addClass('fade-in');
             }
         }
     });
 }
 
 // animate navbar fade-in
-function checkNavbar(windowTop) {
-    var jumbo = $('.jumbotron-portrait'),
-        navbar = $('.navbar');
-    if (jumbo) {
-        if (!$(navbar).hasClass('animated')) {
-            if (windowTop > (jumbo.offset().top + jumbo.height()) && navbar.css("opacity") == 0) {
-                // clone the element and add the animated class to trigger its animation
-                navbar.replaceWith($(navbar).clone(true).addClass('animated'));
+function checkNavbar() {
+    var navbar = $("#mainNav");
+    console.log(scope.page);
+    if (scope.page == "Home") {
+        var windowTop = $(window).scrollTop(),
+            checkAgainst = $(".jumbotron-portrait");
+        console.log("We are in home");
+        console.log(checkAgainst);
+        if (checkAgainst != undefined && !navbar.hasClass('fade-in')) {
+            console.log("checking fade-in");
+            console.log(windowTop + " > " + (checkAgainst.offset().top + checkAgainst.height()) + "?");
+            if (windowTop > (checkAgainst.offset().top + checkAgainst.height())) {
+                if (navbar.hasClass('hidden-animated')) {
+                    navbar.removeClass('hidden-animated');
+                }
+                navbar.removeClass('fade-out').addClass('fade-in');
             }
-        } else {
-            if (windowTop < (jumbo.offset().top + jumbo.height()) && navbar.css("opacity") == 1) {
-                // replace animated and fade-in classes with fade-out
-                // then clone the element and the animated class to trigger its new animation
-                navbar.removeClass('animated fade-in').addClass('fade-out')
-                    .replaceWith($(navbar).clone(true).addClass('animated'));
-                // replace animated and fade-out classes with fade-in to prep it for a scrolling animation
-                setTimeout(function () {
-                    $('.navbar').removeClass('animated fade-out').addClass('fade-in');
-                }, 1000);
+        } else if (checkAgainst != undefined && !navbar.hasClass('fade-out')) {
+            console.log("checking fade-out");
+            if (windowTop < (checkAgainst.offset().top + checkAgainst.height())) {
+                navbar.removeClass('fade-in').addClass('fade-out');
             }
         }
     } else {
-        // clone the element and add the animated class to trigger its animation
-        navbar.replaceWith($(navbar).clone(true).addClass('animated'));
+        navbar.removeClass("hidden-animated fade-out").addClass('fade-in');
     }
 }
 
@@ -89,17 +95,5 @@ function checkBackToTop() {
         button.css({"visibility": "visible"});
     } else {
         button.css({"visibility": "hidden"});
-    }
-}
-
-// animate nav and footer on page load
-function animateOnLoad() {
-    var hiddenElements = $('nav, footer');
-    if (!hiddenElements.hasClass('animated')) {
-        setTimeout(function () {
-            $.each(hiddenElements, function () {
-                $(this).replaceWith($(this).clone(true).addClass('animated'));
-            });
-        }, 500);
     }
 }

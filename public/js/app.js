@@ -5,37 +5,49 @@
 
 var portfolio = angular.module("portfolio", [
     'ui.router',
-    'MainCtrl',
-    'ResumeCtrl']);
+    'MainCtrl']);
 
 angular.module('MainCtrl', [])
-    .controller('MainController', function ($scope, $rootScope) {
-        $scope.page = "Home";
-        $scope.links = [
-            {"value": "Examples", "id": "exams"},
+    .controller('HomeController', function ($scope, $rootScope) {
+        $rootScope.page = "Home";
+        $rootScope.links = [
+            {"value": "Specialities", "id": "specs"},
             {"value": "Technology", "id": "techs"},
-            {"value": "Specialities", "id": "specs"}];
+            {"value": "Examples", "id": "exams"}
+        ];
+    })
+    .controller('ResumeController', function ($scope, $rootScope) {
+        $rootScope.page = "Resume";
+        $rootScope.links = [
+            {"value": "Download PDF", "id": "dl"},
+            {"value": "Summary", "id": "sum"},
+            {"value": "Experience", "id": "exp"},
+            {"value": "Education", "id": "edu"},
+            {"value": "Skills & Expertise", "id": "skex"},
+            {"value": "References", "id": "refs"}
+        ];
+    })
+    .controller('NavController', function ($scope, $rootScope) {
+        $rootScope.$watchCollection('links', function (newLinks) {
+            $scope.links = newLinks;
+        }, true);
 
-        $rootScope.$on('$viewContentLoaded', function () {
-            checkBackToTop();
-        });
+        $rootScope.$watchCollection('page', function (newPage) {
+            $scope.page = newPage;
+        }, true);
     })
     .directive('mainNav', function () {
         return {
-            templateUrl: 'views/navbar.html'
+            replace: true,
+            template: '<li><a data-target="{{link.id}}" onclick=scrollToSection($(this).data("target"));>{{link.value}}</a></li>',
+            link: function (scope, element, attrs) {
+                scope.$watch('links', function (newValue, oldValue) {
+                    if (newValue) {
+                        scope.links = newValue;
+                    }
+                }, true);
+            }
         };
-    });
-
-angular.module('ResumeCtrl', [])
-    .controller('ResumeController', function ($scope) {
-        $scope.page = "Resume";
-        $scope.links = [
-            {"value": "References", "id": "refs"},
-            {"value": "Skills & Expertise", "id": "skex"},
-            {"value": "Education", "id": "edu"},
-            {"value": "Experience", "id": "exp"},
-            {"value": "Summary", "id": "sum"},
-            {"value": "Download PDF", "id": "dl"}];
     });
 
 portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -46,11 +58,12 @@ portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider
         .state('home', {
             url: "/home",
             templateUrl: "views/home.html",
-            controller: "MainController",
+            controller: "HomeController",
             onEnter: function () {
-                animateOnLoad();
+                checkBackToTop();
+                checkNavbar();
             },
-            onExit: function(){
+            onExit: function () {
                 resetToTop();
             }
         })
@@ -59,9 +72,10 @@ portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider
             templateUrl: "views/resume.html",
             controller: "ResumeController",
             onEnter: function () {
-                animateOnLoad();
+                checkBackToTop();
+                checkNavbar();
             },
-            onExit: function(){
+            onExit: function () {
                 resetToTop();
             }
         });

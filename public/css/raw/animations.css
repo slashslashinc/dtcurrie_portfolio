@@ -1,23 +1,17 @@
 /* --------------------- page animations */
 
-.animated {
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
+/* hide scrolling and elements hidden waiting to be animated */
+.scrolling, .hidden-animated {
+    opacity: 0;
 }
 
 /* fade out */
 
 .fade-out {
-    -webkit-animation-name: fade-out;
-    -moz-animation-name: fade-out;
-    -o-animation-name: fade-out;
-    animation-name: fade-out;
+    -webkit-animation: fade-out 1s linear forwards;
+    -moz-animation: fade-out 1s linear forwards;
+    -o-animation: fade-out 1s linear forwards;
+    animation: fade-out 1s linear forwards;
 }
 
 @-webkit-keyframes fade-out {
@@ -69,11 +63,10 @@
 /* fade in */
 
 .fade-in {
-    opacity: 0;
-    -webkit-animation-name: fade-in;
-    -moz-animation-name: fade-in;
-    -o-animation-name: fade-in;
-    animation-name: fade-in;
+    -webkit-animation: fade-in 1s linear forwards;
+    -moz-animation: fade-in 1s linear forwards;
+    -o-animation: fade-in 1s linear forwards;
+    animation: fade-in 1s linear forwards;
 }
 
 @-webkit-keyframes fade-in {
@@ -124,11 +117,10 @@
 /* zoom in */
 
 .zoom-in {
-    opacity: 0;
-    -webkit-animation-name: zoom-in;
-    -moz-animation-name: zoom-in;
-    -o-animation-name: zoom-in;
-    animation-name: zoom-in;
+    -webkit-animation: zoom-in 1s linear forwards;
+    -moz-animation: zoom-in 1s linear forwards;
+    -o-animation: zoom-in 1s linear forwards;
+    animation: zoom-in 1s linear forwards;
 }
 
 @-webkit-keyframes zoom-in {
