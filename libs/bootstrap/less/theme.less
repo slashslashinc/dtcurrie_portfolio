@@ -621,7 +621,16 @@ input[type="checkbox"] {
 
   .list-box-body {
     ul {
-      font-size: 1.25rem;
+      list-style-type: square;
+      @media (min-width: @screen-lg-min){
+        font-size: 1.25rem;
+      }
+      @media (max-width: @screen-md-max){
+        font-size: 1rem;
+      }
+      @media (max-width: @screen-sm-max){
+        font-size: 1.5rem;
+      }
     }
     @media (max-width: @screen-sm-max) {
       text-align: center;
@@ -629,7 +638,7 @@ input[type="checkbox"] {
     }
     @media (min-width: @screen-md-min) {
       text-align: justify;
-      width: 60%;
+      width: 70%;
     }
   }
 
@@ -638,14 +647,14 @@ input[type="checkbox"] {
       text-align: center;
 
       .fa-stack-1x {
-        font-size: 5.75rem;
+        font-size: 3.75rem;
       }
     }
     &-stack {
       width: 100%;
     }
     &-inline {
-      width: 40%;
+      width: 30%;
     }
   }
 

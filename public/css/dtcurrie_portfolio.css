@@ -461,7 +461,22 @@ input[type="checkbox"] {
   text-align: center;
 }
 .list-box .list-box-body ul {
-  font-size: 1.25rem;
+  list-style-type: square;
+}
+@media (min-width: 1200px) {
+  .list-box .list-box-body ul {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 1199px) {
+  .list-box .list-box-body ul {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 991px) {
+  .list-box .list-box-body ul {
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 991px) {
   .list-box .list-box-body {
@@ -472,7 +487,7 @@ input[type="checkbox"] {
 @media (min-width: 992px) {
   .list-box .list-box-body {
     text-align: justify;
-    width: 60%;
+    width: 70%;
   }
 }
 .list-box .list-box-icon-stack,
@@ -481,13 +496,13 @@ input[type="checkbox"] {
 }
 .list-box .list-box-icon-stack .fa-stack-1x,
 .list-box .list-box-icon-inline .fa-stack-1x {
-  font-size: 5.75rem;
+  font-size: 3.75rem;
 }
 .list-box .list-box-icon-stack {
   width: 100%;
 }
 .list-box .list-box-icon-inline {
-  width: 40%;
+  width: 30%;
 }
 @media (min-width: 992px) {
   .list-box-left .list-box-body {
