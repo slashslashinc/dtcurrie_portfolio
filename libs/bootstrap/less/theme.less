@@ -613,13 +613,13 @@ input[type="checkbox"] {
 .list-box {
   width: 100%;
 
-  .list-box-heading {
+  &-heading {
     width: 100%;
     display: block;
     text-align: center;
   }
 
-  .list-box-body {
+  &-body {
     ul {
       list-style-type: square;
       @media (min-width: @screen-lg-min){
@@ -642,19 +642,24 @@ input[type="checkbox"] {
     }
   }
 
-  .list-box-icon {
+  &-icon {
     &-stack, &-inline {
       text-align: center;
 
       .fa-stack-1x {
-        font-size: 3.75rem;
+        @media(max-width: @screen-sm-max){
+          font-size: 5.75rem;
+        }
+        @media(min-width: @screen-md-min){
+          font-size: 3.75rem;
+        }
       }
     }
     &-stack {
-      width: 100%;
+      width: 100%!important;
     }
     &-inline {
-      width: 30%;
+      width: 30%!important;
     }
   }
 
