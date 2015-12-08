@@ -218,6 +218,56 @@
   }
 }
 
+.tech-icons {
+  a {
+    min-width: 12rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech-icon {
+
+    @media (min-width: @screen-lg-min) {
+      a {
+        float: none;
+      }
+    }
+
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      &:nth-child(odd) {
+        a {
+          float: right;
+        }
+      }
+
+      &:nth-child(even) {
+        a {
+          float: left;
+        }
+      }
+    }
+
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      a {
+        float: none;
+      }
+    }
+
+    @media (max-width: @screen-xs-max){
+      &:nth-child(odd) {
+        a {
+          float: right;
+        }
+      }
+
+      &:nth-child(even) {
+        a {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
 // Typography =================================================================
 
 cite {
@@ -622,13 +672,13 @@ input[type="checkbox"] {
   &-body {
     ul {
       list-style-type: square;
-      @media (min-width: @screen-lg-min){
+      @media (min-width: @screen-lg-min) {
         font-size: 1.25rem;
       }
-      @media (max-width: @screen-md-max){
+      @media (max-width: @screen-md-max) {
         font-size: 1rem;
       }
-      @media (max-width: @screen-sm-max){
+      @media (max-width: @screen-sm-max) {
         font-size: 1.5rem;
       }
     }
@@ -647,19 +697,19 @@ input[type="checkbox"] {
       text-align: center;
 
       .fa-stack-1x {
-        @media(max-width: @screen-sm-max){
+        @media (max-width: @screen-sm-max) {
           font-size: 5.75rem;
         }
-        @media(min-width: @screen-md-min){
+        @media (min-width: @screen-md-min) {
           font-size: 3.75rem;
         }
       }
     }
     &-stack {
-      width: 100%!important;
+      width: 100% !important;
     }
     &-inline {
-      width: 30%!important;
+      width: 30% !important;
     }
   }
 

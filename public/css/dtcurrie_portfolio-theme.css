@@ -215,7 +215,7 @@
     content: "\e603";
 }
 .icon-express:before {
-    content: "\e605";
+    content: "\e900";
 }
 .icon-sass:before {
     content: "\e606";
@@ -240,21 +240,6 @@ body.modal-open {
 
 #thumbnailModal > .modal-dialog {
     width: auto !important;
-}
-
-.btn-jumbo {
-    height: 100%;
-    width: 100%;
-}
-
-.fa-jumbo {
-    font-size: 10rem;
-    padding-top: 5px;
-}
-
-.fa-jumbo-xl {
-    font-size: 25rem;
-    padding-top: 10px;;
 }
 
 .text-jumbo {

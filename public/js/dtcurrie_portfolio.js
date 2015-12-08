@@ -83,7 +83,7 @@ function checkNavbar() {
                 navbar.removeClass('fade-in').addClass('fade-out');
             }
         }
-    } else {
+    } else if(scope.page == "Resume") {
         navbar.removeClass("hidden-animated fade-out").addClass('fade-in');
     }
 }

@@ -148,6 +148,36 @@
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu > li > a:hover {
   background-color: #dc2c0f;
 }
+.tech-icons a {
+  min-width: 12rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 1200px) {
+  .tech-icons .tech-icon a {
+    float: none;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tech-icons .tech-icon:nth-child(odd) a {
+    float: right;
+  }
+  .tech-icons .tech-icon:nth-child(even) a {
+    float: left;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .tech-icons .tech-icon a {
+    float: none;
+  }
+}
+@media (max-width: 767px) {
+  .tech-icons .tech-icon:nth-child(odd) a {
+    float: right;
+  }
+  .tech-icons .tech-icon:nth-child(even) a {
+    float: left;
+  }
+}
 cite {
   font-style: italic;
 }
@@ -507,10 +537,10 @@ input[type="checkbox"] {
   }
 }
 .list-box-icon-stack {
-  width: 100%!important;
+  width: 100% !important;
 }
 .list-box-icon-inline {
-  width: 30%!important;
+  width: 30% !important;
 }
 @media (min-width: 992px) {
   .list-box-left .list-box-body {
