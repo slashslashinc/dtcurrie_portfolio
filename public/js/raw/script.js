@@ -62,15 +62,10 @@ function checkScrollingFadeIns() {
 // animate navbar fade-in
 function checkNavbar() {
     var navbar = $("#mainNav");
-    console.log(scope.page);
     if (scope.page == "Home") {
         var windowTop = $(window).scrollTop(),
             checkAgainst = $(".jumbotron-portrait");
-        console.log("We are in home");
-        console.log(checkAgainst);
-        if (checkAgainst != undefined && !navbar.hasClass('fade-in')) {
-            console.log("checking fade-in");
-            console.log(windowTop + " > " + (checkAgainst.offset().top + checkAgainst.height()) + "?");
+        if (checkAgainst != undefined && !navbar.hasClass('fade-in')) {;
             if (windowTop > (checkAgainst.offset().top + checkAgainst.height())) {
                 if (navbar.hasClass('hidden-animated')) {
                     navbar.removeClass('hidden-animated');
@@ -78,7 +73,6 @@ function checkNavbar() {
                 navbar.removeClass('fade-out').addClass('fade-in');
             }
         } else if (checkAgainst != undefined && !navbar.hasClass('fade-out')) {
-            console.log("checking fade-out");
             if (windowTop < (checkAgainst.offset().top + checkAgainst.height())) {
                 navbar.removeClass('fade-in').addClass('fade-out');
             }
