@@ -1,7 +1,7 @@
 <!-- public/views/index.html - Devin T. Currie -->
 
 <!DOCTYPE html>
-<html lang="en" ng-app="portfolio">
+<html lang="en" ng-app="portfolio" class="teal">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -98,11 +98,11 @@
 <div ui-view></div>
 
 <!-- FOOTER -->
-<a href="#" id="back-to-top-fixed" class="hidden-xs visible-sm visible-md visible-lg text-primary fade-in"
-   onclick="scrollToTop()"><i class="fa fa-2x fa-arrow-circle-o-up"></i>
-</a>
-<a href="#" id="back-to-top-static" class="visible-xs hidden-sm hidden-md hidden-lg text-primary fade-in"
-   onclick="scrollToTop()"><i class="fa fa-2x fa-arrow-circle-o-up"></i>
-</a>
+<footer>
+    <a href="#" class="back-to-top fixed hidden-xs visible-sm visible-md visible-lg text-primary"
+         onclick="scrollToTop()"><i class="fa fa-2x fa-arrow-circle-o-up"></i></a>
+    <a href="#" class="back-to-top static visible-xs hidden-sm hidden-md hidden-lg text-primary"
+         onclick="scrollToTop()"><i class="fa fa-2x fa-arrow-circle-o-up"></i></a>
+</footer>
 </body>
 </html>

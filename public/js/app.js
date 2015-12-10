@@ -19,7 +19,6 @@ angular.module('MainCtrl', [])
     .controller('ResumeController', function ($scope, $rootScope) {
         $rootScope.page = "Resume";
         $rootScope.links = [
-            {"value": "Download PDF", "id": "dl"},
             {"value": "Summary", "id": "sum"},
             {"value": "Experience", "id": "exp"},
             {"value": "Education", "id": "edu"},
@@ -73,7 +72,7 @@ portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider
             controller: "ResumeController",
             onEnter: function () {
                 checkBackToTop();
-                checkNavbar();
+                showNavbar();
             },
             onExit: function () {
                 resetToTop();

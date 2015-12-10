@@ -23,6 +23,7 @@ $(document).on("click", '.thumbnail', function (event) {
 $(window).scroll(function () {
     checkNavbar();
     checkScrollingFadeIns();
+    checkBackToTop();
 });
 
 // animate scroll to target element by id
@@ -61,33 +62,50 @@ function checkScrollingFadeIns() {
 
 // animate navbar fade-in
 function checkNavbar() {
-    var navbar = $("#mainNav");
-    if (scope.page == "Home") {
-        var windowTop = $(window).scrollTop(),
-            checkAgainst = $(".jumbotron-portrait");
-        if (checkAgainst != undefined && !navbar.hasClass('fade-in')) {;
-            if (windowTop > (checkAgainst.offset().top + checkAgainst.height())) {
+    var navbar = $("#mainNav"); // get main nav bar
+    if (scope.page == "Home") { // check if we are on the home page
+        var windowTop = $(window).scrollTop(),          // distance from top of window to top of page (0 = top)
+            checkAgainst = $(".jumbotron-hero-image");    // element to check against
+        if (checkAgainst != undefined) {
+            // if the checkAgainst element exists (viewable)
+            if (windowTop > (checkAgainst.offset().top + checkAgainst.height()) && !navbar.hasClass('fade-in')) {
+                // if the top of the window is below the bottom of checkAgainst and the nav bar isn't fading in
                 if (navbar.hasClass('hidden-animated')) {
+                    // if it hasn't been initially animated from page load animations
                     navbar.removeClass('hidden-animated');
                 }
+                // remove fade-out class if nav bar has faded out before and fade-in nav bar
                 navbar.removeClass('fade-out').addClass('fade-in');
-            }
-        } else if (checkAgainst != undefined && !navbar.hasClass('fade-out')) {
-            if (windowTop < (checkAgainst.offset().top + checkAgainst.height())) {
+            } else if (windowTop < (checkAgainst.offset().top + checkAgainst.height()) && !navbar.hasClass('fade-out')) {
+                // if the top of the window is above the bottom of checkAgainst and the nav bar isn't fading out
+                // remove fade-in class if nav bar has faded in before and fade-out nav bar
                 navbar.removeClass('fade-in').addClass('fade-out');
             }
         }
-    } else if(scope.page == "Resume") {
+    } else if (scope.page == "Resume") {    // check if we are on the resume page
+        // remove classes if the nav bar  hasn't been initially animated from page load animations or has been faded out
+        // before and fade it in
         navbar.removeClass("hidden-animated fade-out").addClass('fade-in');
     }
 }
 
+function showNavbar() {
+    $("#mainNav").removeClass("hidden-animated fade-out").addClass('fade-in');
+}
+
 // if the window does no require vertical scrolling, hide the back-to-top button
 function checkBackToTop() {
-    var button = $('#backToTop');
-    if (document.body.scrollHeight > window.innerHeight) {
-        button.css({"visibility": "visible"});
+    if (document.body.scrollHeight > window.innerHeight && $(window).scrollTop() > 0) {
+        $.each($('.back-to-top'), function (i, e) {
+            if (!$(e).hasClass('fade-in')) {
+                $(e).removeClass('fade-out').addClass('fade-in');
+            }
+        });
     } else {
-        button.css({"visibility": "hidden"});
+        $.each($('.back-to-top'), function (i, e) {
+            if (!$(e).hasClass('fade-out')) {
+                $(e).removeClass('fade-in').addClass('fade-out');
+            }
+        });
     }
 }

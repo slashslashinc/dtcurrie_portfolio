@@ -1,5 +1,5 @@
 /*
- Custom Bootstrap Theme - For Teal?
+ Custom Bootstrap Theme
  Devin T. Currie
  */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic");
@@ -254,53 +254,180 @@ blockquote small {
   border-left: 2rem solid transparent;
   border-right: 2rem solid transparent;
 }
-.jumbotron-portrait {
+.border-primary {
+  border-color: #00bba8;
+}
+.border-success {
+  border-color: #43ac6a;
+}
+.border-info {
+  border-color: #5bc0de;
+}
+.border-warning {
+  border-color: #f5de31;
+}
+.border-danger {
+  border-color: #f04124;
+}
+.jumbotron-hero-image {
   position: relative;
   width: 100%;
   height: 98rem;
+  margin-bottom: -5rem;
   color: #fff;
   background-image: url('../imgs/portrait-bg.jpg');
   overflow: hidden;
 }
 @media (max-width: 480px) {
-  .jumbotron-portrait {
+  .jumbotron-hero-image {
     background-position-x: -100rem;
-    background-position-y: -20rem;
+    background-position-y: -40rem;
   }
-  .jumbotron-portrait .slant-left {
+  .jumbotron-hero-image .text {
     padding-top: 15rem;
+    padding-bottom: 2.5rem;
+    width: 50%;
+  }
+  .jumbotron-hero-image .text h1 {
+    font-size: 2.8rem;
+  }
+  .jumbotron-hero-image .text span {
+    font-size: 1.5rem;
+  }
+  .jumbotron-hero-image .section-icon {
+    font-size: 2.5rem;
+  }
+  .jumbotron-hero-image .section-title {
+    font-size: 1rem;
+    font-weight: lighter;
+    display: block;
   }
 }
-@media (min-width: 480px) {
-  .jumbotron-portrait .slant-left {
-    padding-top: 10rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 768px) {
-  .jumbotron-portrait {
+@media (min-width: 480px) and (max-width: 767px) {
+  .jumbotron-hero-image {
     background-position-x: -80rem;
     background-position-y: -35rem;
   }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .jumbotron-portrait {
-    background-position-x: -90rem;
-    background-position-y: -35rem;
+  .jumbotron-hero-image .text {
+    padding-top: 10rem;
+    padding-bottom: 2.5rem;
+    width: 51%;
+  }
+  .jumbotron-hero-image .text h1 {
+    font-size: 6rem;
+  }
+  .jumbotron-hero-image .text span {
+    font-size: 2rem;
+  }
+  .jumbotron-hero-image .section-icon {
+    font-size: 3rem;
+  }
+  .jumbotron-hero-image .section-title {
+    font-size: 1.25rem;
+    font-weight: lighter;
+    display: block;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
-  .jumbotron-portrait {
-    background-position-x: -50rem;
+@media (min-width: 768px) and (max-width: 991px) {
+  .jumbotron-hero-image {
+    background-position-x: -70rem;
     background-position-y: -35rem;
   }
-}
-@media (min-width: 1200px) {
-  .jumbotron-portrait {
-    background-position-x: -25rem;
-    background-position-y: -35rem;
+  .jumbotron-hero-image .text {
+    padding-top: 10rem;
+    padding-bottom: 2.5rem;
+    width: 50%;
+  }
+  .jumbotron-hero-image .text h1 {
+    font-size: 6rem;
+  }
+  .jumbotron-hero-image .text span {
+    font-size: 2rem;
+  }
+  .jumbotron-hero-image .section-icon {
+    font-size: 4rem;
+  }
+  .jumbotron-hero-image .section-title {
+    font-size: 1.25rem;
+    font-weight: lighter;
+    display: block;
   }
 }
-.jumbotron-portrait:after {
+@media (min-width: 992px) and (max-width: 1199px) {
+  .jumbotron-hero-image {
+    background-position-x: -45rem;
+    background-position-y: -35rem;
+  }
+  .jumbotron-hero-image .text {
+    padding-top: 10rem;
+    padding-bottom: 2.5rem;
+    width: 45%;
+  }
+  .jumbotron-hero-image .text h1 {
+    font-size: 6rem;
+  }
+  .jumbotron-hero-image .text span {
+    font-size: 2rem;
+  }
+  .jumbotron-hero-image .section-icon {
+    font-size: 5rem;
+  }
+  .jumbotron-hero-image .section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .jumbotron-hero-image {
+    background-position-x: -30rem;
+    background-position-y: -35rem;
+  }
+  .jumbotron-hero-image .text {
+    padding-top: 10rem;
+    padding-bottom: 2.5rem;
+    width: 51%;
+  }
+  .jumbotron-hero-image .text h1 {
+    font-size: 9.75rem;
+  }
+  .jumbotron-hero-image .text span {
+    font-size: 2rem;
+  }
+  .jumbotron-hero-image .section-icon {
+    font-size: 7rem;
+  }
+  .jumbotron-hero-image .section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+  }
+}
+@media (min-width: 1440px) {
+  .jumbotron-hero-image {
+    background-position-y: -35rem;
+  }
+  .jumbotron-hero-image .text {
+    padding-top: 10rem;
+    padding-bottom: 2.5rem;
+    width: 59%;
+  }
+  .jumbotron-hero-image .text h1 {
+    font-size: 13.75rem;
+  }
+  .jumbotron-hero-image .text span {
+    font-size: 2rem;
+  }
+  .jumbotron-hero-image .section-icon {
+    font-size: 10rem;
+  }
+  .jumbotron-hero-image .section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+  }
+}
+.jumbotron-hero-image:after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -313,18 +440,18 @@ blockquote small {
   -o-background-size: cover;
   background-size: cover;
   border-bottom: 150px solid white;
-  border-left: 3000px solid transparent;
+  border-right: 3000px solid transparent;
 }
-.jumbotron-portrait.top {
+.jumbotron-hero-image.top {
   margin-top: 0 !important;
 }
-.jumbotron-portrait .section-icon:hover .fa-stack-2x {
+.jumbotron-hero-image .section-icon:hover .fa-stack-2x {
   color: #e6e6e6;
 }
-.jumbotron-portrait .section-icon:hover .fa-stack-2x.text-primary {
+.jumbotron-hero-image .section-icon:hover .fa-stack-2x.text-primary {
   color: #009283;
 }
-.jumbotron-portrait .section-icon:hover .fa-stack-2x.text-warning {
+.jumbotron-hero-image .section-icon:hover .fa-stack-2x.text-warning {
   color: #dec50b;
 }
 .jumbotron.top {
@@ -334,6 +461,9 @@ blockquote small {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
+}
+.jumbotron .portrait {
+  height: auto;
 }
 table {
   font-size: 12px;
@@ -484,78 +614,141 @@ input[type="checkbox"] {
 }
 .list-box {
   width: 100%;
+  margin-bottom: 2rem;
 }
-.list-box-heading {
+.list-box .list-box-heading {
+  background-color: #eeeeee;
+}
+.list-box .list-box-heading > * {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+.list-box .list-box-body {
   width: 100%;
-  display: block;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+.list-box .list-box-body .list-box-text {
+  flex: 3;
+}
+.list-box .list-box-body .list-box-text ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+.list-box .list-box-body .list-box-text ul li {
+  padding: 1rem;
+}
+.list-box .list-box-body .list-box-text ul li:nth-child(odd) {
+  background-color: #eeeeee;
+}
+.list-box .list-box-body .list-box-text ul li:nth-child(even) {
+  border-left: 1px solid #eeeeee;
+}
+.list-box .list-box-body .list-box-icon {
+  flex: 1;
+  align-self: center;
   text-align: center;
 }
-.list-box-body ul {
-  list-style-type: square;
-}
-@media (min-width: 1200px) {
-  .list-box-body ul {
-    font-size: 1.25rem;
+@media (max-width: 480px) {
+  .list-box .list-box-body .list-box-icon {
+    font-size: 4rem;
+  }
+  .list-box .list-box-body .list-box-icon .fa-stack .fa-stack-1x {
+    font-size: 3rem;
   }
 }
-@media (max-width: 1199px) {
-  .list-box-body ul {
-    font-size: 1rem;
+@media (min-width: 480px) and (max-width: 767px) {
+  .list-box .list-box-body .list-box-icon {
+    font-size: 5rem;
+  }
+  .list-box .list-box-body .list-box-icon .fa-stack .fa-stack-1x {
+    font-size: 4rem;
   }
 }
-@media (max-width: 991px) {
-  .list-box-body ul {
-    font-size: 1.5rem;
+@media (min-width: 768px) and (max-width: 991px) {
+  .list-box .list-box-body .list-box-icon {
+    font-size: 5rem;
+  }
+  .list-box .list-box-body .list-box-icon .fa-stack .fa-stack-1x {
+    font-size: 4rem;
   }
 }
-@media (max-width: 991px) {
-  .list-box-body {
-    text-align: center;
-    width: 100%;
+@media (min-width: 992px) and (max-width: 1199px) {
+  .list-box .list-box-body .list-box-icon {
+    font-size: 5rem;
+  }
+  .list-box .list-box-body .list-box-icon .fa-stack .fa-stack-1x {
+    font-size: 4rem;
   }
 }
-@media (min-width: 992px) {
-  .list-box-body {
-    text-align: justify;
-    width: 70%;
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .list-box .list-box-body .list-box-icon {
+    font-size: 6rem;
+  }
+  .list-box .list-box-body .list-box-icon .fa-stack .fa-stack-1x {
+    font-size: 5rem;
   }
 }
-.list-box-icon-stack,
-.list-box-icon-inline {
-  text-align: center;
-}
-@media (max-width: 991px) {
-  .list-box-icon-stack .fa-stack-1x,
-  .list-box-icon-inline .fa-stack-1x {
-    font-size: 5.75rem;
+@media (min-width: 1440px) {
+  .list-box .list-box-body .list-box-icon {
+    font-size: 7rem;
+  }
+  .list-box .list-box-body .list-box-icon .fa-stack .fa-stack-1x {
+    font-size: 6rem;
   }
 }
-@media (min-width: 992px) {
-  .list-box-icon-stack .fa-stack-1x,
-  .list-box-icon-inline .fa-stack-1x {
-    font-size: 3.75rem;
+.list-box-primary .list-box-heading {
+  background-color: #00bba8;
+  color: #fff;
+}
+.list-box-reverse .list-box-body {
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+.list-box-reverse .list-box-body ul li:nth-child(even) {
+  border-right: 1px solid #eeeeee;
+  border-left: none !important;
+}
+.portrait-small {
+  width: 30rem;
+  height: 30rem;
+  background-image: url('../imgs/portrait.jpg');
+  background-size: cover;
+  background-position-y: -5rem;
+  margin-top: 4rem;
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .portrait-small-text {
+    margin-top: 0;
   }
 }
-.list-box-icon-stack {
-  width: 100% !important;
-}
-.list-box-icon-inline {
-  width: 30% !important;
-}
-@media (min-width: 992px) {
-  .list-box-left .list-box-body {
-    float: left;
+@media (min-width: 768px) and (max-width: 992px) {
+  .portrait-small-text {
+    margin-top: 5.5rem;
   }
 }
-.list-box-left .list-box-icon-inline {
-  float: right;
-}
-@media (min-width: 992px) {
-  .list-box-right .list-box-body {
-    float: right;
+@media (min-width: 992px) and (max-width: 1200px) {
+  .portrait-small-text {
+    margin-top: 9rem;
   }
 }
-.list-box-right .list-box-icon-inline {
-  float: left;
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .portrait-small-text {
+    margin-top: 5.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .portrait-small-text {
+    margin-top: 8.5rem;
+  }
 }
 /*# sourceMappingURL=dtcurrie_portfolio-theme.css.map */

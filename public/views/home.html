@@ -1,108 +1,51 @@
 <!-- public/views/home.html - Devin T. Currie -->
 
-<div class="jumbotron jumbotron-portrait top banner fade-in">
-    <div class="text-justify">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-7 col-sm-4 col-md-5 col-lg-6 pull-left slant-left">
-                    <div class="col-xs-12">
-                        <h1>Devin Currie</h1>
-                    </div>
-                    <div class="col-xs-12">
-                        <hr>
-                        <p>focused on creating sleek and intuitive user interfaces for web sites and applications</p>
-                    </div>
-                </div>
+<div class="jumbotron jumbotron-hero-image top banner fade-in">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-xs-offset-1 pull-left text">
+                <h1>Devin Currie</h1>
+                <hr>
+                <span>focused on creating sleek and intuitive user interfaces for
+                    <strong>web sites and applications</strong>
+                </span>
             </div>
-            <div class="row hidden-xs hidden-sm hidden-md visible-lg">
-                <div class="col-xs-12">
-                    <ul class="list-unstyled list-inline">
-                        <li>
-                            <div class="fa-stack fa-5x section-icon" data-target="specs"
-                                 onclick="scrollToSection($(this).data('target'));">
-                                <i class="fa fa-stack-2x fa-circle text-primary"></i>
-                                <i class="fa fa-stack-1x fa-bolt text-warning"></i>
-                            </div>
-                            <div class="text-center">
-                                <strong>Specialties</strong>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fa-stack fa-5x section-icon" data-target="techs"
-                                 onclick="scrollToSection($(this).data('target'));">
-                                <i class="fa fa-stack-2x fa-circle"></i>
-                                <i class="fa fa-stack-1x fa-code text-primary"></i>
-                            </div>
-                            <div class="text-center">
-                                <strong>Technology</strong>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fa-stack fa-5x section-icon" data-target="exams"
-                                 onclick="scrollToSection($(this).data('target'));">
-                                <i class="fa fa-stack-2x fa-circle text-primary"></i>
-                                <i class="fa fa-stack-1x fa-desktop"></i>
-                            </div>
-                            <div class="text-center">
-                                <strong>Examples</strong>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fa-stack fa-5x section-icon" ui-sref="resume">
-                                <i class="fa fa-stack-2x fa-circle text-warning"></i>
-                                <i class="fa fa-stack-1x fa-file-text text-primary"></i>
-                            </div>
-                            <div class="text-center">
-                                <strong>Resume</strong>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row hidden-xs hidden-sm visible-md hidden-lg">
-                <div class="col-xs-12">
-                    <ul class="list-unstyled list-inline">
-                        <li>
-                            <div class="fa-stack fa-4x section-icon" data-target="specs"
-                                 onclick="scrollToSection($(this).data('target'));">
-                                <i class="fa fa-stack-2x fa-circle text-primary"></i>
-                                <i class="fa fa-stack-1x fa-bolt text-warning"></i>
-                            </div>
-                            <div class="text-center">
-                                <strong>Specialties</strong>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fa-stack fa-4x section-icon" data-target="techs"
-                                 onclick="scrollToSection($(this).data('target'));">
-                                <i class="fa fa-stack-2x fa-circle"></i>
-                                <i class="fa fa-stack-1x fa-code text-primary"></i>
-                            </div>
-                            <div class="text-center">
-                                <strong>Technology</strong>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fa-stack fa-4x section-icon" data-target="exams"
-                                 onclick="scrollToSection($(this).data('target'));">
-                                <i class="fa fa-stack-2x fa-circle text-primary"></i>
-                                <i class="fa fa-stack-1x fa-desktop"></i>
-                            </div>
-                            <div class="text-center">
-                                <strong>Examples</strong>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fa-stack fa-4x section-icon" ui-sref="resume">
-                                <i class="fa fa-stack-2x fa-circle text-warning"></i>
-                                <i class="fa fa-stack-1x fa-file-text text-primary"></i>
-                            </div>
-                            <div class="text-center">
-                                <strong>Resume</strong>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <ul class="list-unstyled list-inline">
+                    <li class="text-center">
+                        <div class="fa-stack section-icon" data-target="specs"
+                             onclick="scrollToSection($(this).data('target'));">
+                            <i class="fa fa-stack-2x fa-circle text-primary"></i>
+                            <i class="fa fa-stack-1x fa-bolt text-warning"></i>
+                        </div>
+                        <span class="section-title">Specialties</span>
+                    </li>
+                    <li class="text-center">
+                        <div class="fa-stack section-icon" data-target="techs"
+                             onclick="scrollToSection($(this).data('target'));">
+                            <i class="fa fa-stack-2x fa-circle"></i>
+                            <i class="fa fa-stack-1x fa-code text-primary"></i>
+                        </div>
+                        <span class="section-title">Technology</span>
+                    </li>
+                    <li class="text-center">
+                        <div class="fa-stack section-icon" data-target="exams"
+                             onclick="scrollToSection($(this).data('target'));">
+                            <i class="fa fa-stack-2x fa-circle text-primary"></i>
+                            <i class="fa fa-stack-1x fa-desktop"></i>
+                        </div>
+                        <span class="section-title">Examples</span>
+                    </li>
+                    <li class="text-center">
+                        <div class="fa-stack section-icon" ui-sref="resume">
+                            <i class="fa fa-stack-2x fa-circle text-warning"></i>
+                            <i class="fa fa-stack-1x fa-file-text text-primary"></i>
+                        </div>
+                        <span class="section-title">Resume</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -112,120 +55,101 @@
         <ul class="list-unstyled list-inline">
             <li>
                 <div class="flag">
-                    <div class="flag-pole">
-                        <i class="flag-end fa fa-circle text-warning"></i>
-                    </div>
+                    <div class="flag-pole"><i class="flag-end fa fa-circle text-warning"></i></div>
                     <i class="flag-icon fa fa-2x fa-bolt text-warning"></i>
                 </div>
             </li>
-            <li>
-                <h2>Specialties</h2>
-            </li>
+            <li><h2>Specialties</h2></li>
         </ul>
     </div>
-
-    <div class="col-xs-12 col-md-6 text-center">
-        <div class="list-box list-box-left">
-            <h2 class="list-box-heading">
-                User Interfaces
-            </h2>
-
-            <div class="list-box-icon-stack fa-stack fa-5x visible-xs visible-sm hidden-md hidden-lg">
-                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
-                <i class="fa fa-stack-1x fa-tasks text-warning"></i>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="list-box list-box-primary">
+                <div class="list-box-heading"><h2>User Interfaces</h2></div>
+                <div class="list-box-body">
+                    <div class="list-box-icon">
+                        <div class="fa-stack">
+                            <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                            <i class="fa fa-stack-1x fa-tasks text-warning"></i>
+                        </div>
+                    </div>
+                    <div class="list-box-text">
+                        <ul>
+                            <li>Sleek single page web sites and applications mean less load times for your users</li>
+                            <li>
+                                Approachable design, with the ability to create custom "themes" for your web site or
+                                application
+                            </li>
+                            <li>Responsive and cross-platform design viewable on most browsers and devices.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="list-box-body">
-                <ul>
-                    <li>Sleek single page web sites and applications mean less load times for your users</li>
-                    <li>
-                        Approachable design, with the ability to create custom "themes" for your web site or application
-                    </li>
-                    <li>Responsive and cross-platform design viewable on most browsers and devices.</li>
-                </ul>
-            </div>
-
-            <div class="list-box-icon-inline fa-stack fa-3x hidden-xs hidden-sm visible-md visible-lg">
-                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
-                <i class="fa fa-stack-1x fa-tasks text-warning"></i>
+        <div class="col-xs-12 col-md-6">
+            <div class="list-box list-box-primary list-box-reverse">
+                <div class="list-box-heading"><h2>User Experience</h2></div>
+                <div class="list-box-body">
+                    <div class="list-box-icon">
+                        <div class="fa-stack">
+                            <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                            <i class="fa fa-stack-1x fa-users text-warning"></i>
+                        </div>
+                    </div>
+                    <div class="list-box-text">
+                        <ul>
+                            <li>Focused on simplicity, allowing users to jump into your web site or application</li>
+                            <li>Design that balances user exploration with efficient navigation</li>
+                            <li>Intuitive color schemes let users understand your UI at a glance</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="col-xs-12 col-md-6 text-center">
-        <div class="list-box list-box-right">
-            <h2 class="list-box-heading">
-                User Experience
-            </h2>
-
-            <div class="list-box-icon-inline fa-stack fa-3x hidden-xs hidden-sm visible-md visible-lg">
-                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
-                <i class="fa fa-stack-1x fa-users text-warning"></i>
-            </div>
-
-            <div class="list-box-icon-stack fa-stack fa-5x visible-xs visible-sm hidden-md hidden-lg">
-                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
-                <i class="fa fa-stack-1x fa-users text-warning"></i>
-            </div>
-
-            <div class="list-box-body">
-                <ul>
-                    <li>Focused on simplicity, allowing users to jump into your web site or application</li>
-                    <li>Design that balances user exploration with efficient navigation</li>
-                    <li>Intuitive color schemes let users understand your UI at a glance</li>
-                </ul>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="list-box list-box-primary">
+                <div class="list-box-heading"><h2>Team Development</h2></div>
+                <div class="list-box-body">
+                    <div class="list-box-icon">
+                        <div class="fa-stack">
+                            <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                            <i class="fa fa-stack-1x fa-puzzle-piece text-warning"></i>
+                        </div>
+                    </div>
+                    <div class="list-box-text">
+                        <ul>
+                            <ul>
+                                <li>Implement designs and features according to specification</li>
+                                <li>Quick and iterative development using project management systems like AGILE</li>
+                                <li>Well maintained version control practices using technology like Git</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-xs-12 col-md-6 text-center">
-        <div class="list-box list-box-left">
-            <h2 class="list-box-heading">
-                Team Development
-            </h2>
-
-            <div class="list-box-icon-stack fa-stack fa-5x visible-xs visible-sm hidden-md hidden-lg">
-                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
-                <i class="fa fa-stack-1x fa-puzzle-piece text-warning"></i>
-            </div>
-
-            <div class="list-box-body">
-                <ul>
-                    <li>Implement designs and features according to specification</li>
-                    <li>Quick and iterative development using project management systems like AGILE</li>
-                    <li>Well maintained version control practices using technology like Git</li>
-                </ul>
-            </div>
-
-            <div class="list-box-icon-inline fa-stack fa-3x hidden-xs hidden-sm visible-md visible-lg">
-                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
-                <i class="fa fa-stack-1x fa-puzzle-piece text-warning"></i>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-md-6 text-center">
-        <div class="list-box list-box-right">
-            <h2 class="list-box-heading">
-                Communication
-            </h2>
-
-            <div class="list-box-icon-inline fa-stack fa-3x hidden-xs hidden-sm visible-md visible-lg">
-                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
-                <i class="fa fa-stack-1x fa-comments text-warning"></i>
-            </div>
-
-            <div class="list-box-icon-stack fa-stack fa-5x visible-xs visible-sm hidden-md hidden-lg">
-                <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
-                <i class="fa fa-stack-1x fa-comments text-warning"></i>
-            </div>
-
-            <div class="list-box-body">
-                <ul>
-                    <li>Capable of working remote using technologies like WebEx to share ideas</li>
-                    <li>Understand conveying information in a variety of mediums</li>
-                    <li>Respond promptly and professionally, never leaving you in the dark</li>
-                </ul>
+        <div class="col-xs-12 col-md-6">
+            <div class="list-box list-box-primary list-box-reverse">
+                <div class="list-box-heading"><h2>Communication</h2></div>
+                <div class="list-box-body">
+                    <div class="list-box-icon">
+                        <div class="fa-stack">
+                            <i class="fa fa-stack-2x fa-circle-o text-primary"></i>
+                            <i class="fa fa-stack-1x fa-comments text-warning"></i>
+                        </div>
+                    </div>
+                    <div class="list-box-text">
+                        <ul>
+                            <li>Capable of working remote using technologies like WebEx to share ideas</li>
+                            <li>Understand conveying information in a variety of mediums</li>
+                            <li>Respond promptly and professionally, never leaving you in the dark</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -235,15 +159,11 @@
         <ul class="list-unstyled list-inline">
             <li>
                 <div class="flag muted">
-                    <div class="flag-pole">
-                        <i class="flag-end fa fa-circle text-warning"></i>
-                    </div>
+                    <div class="flag-pole"><i class="flag-end fa fa-circle text-warning"></i></div>
                     <i class="flag-icon fa fa-2x fa-code text-primary"></i>
                 </div>
             </li>
-            <li>
-                <h2>Technologies</h2>
-            </li>
+            <li><h2>Technologies</h2></li>
         </ul>
     </div>
 
@@ -370,19 +290,16 @@
         <ul class="list-unstyled list-inline">
             <li>
                 <div class="flag">
-                    <div class="flag-pole">
-                        <i class="flag-end fa fa-circle text-warning"></i>
-                    </div>
+                    <div class="flag-pole"><i class="flag-end fa fa-circle text-warning"></i></div>
                     <i class="flag-icon fa fa-2x fa-desktop"></i>
                 </div>
             </li>
-            <li>
-                <h2>Examples</h2>
-            </li>
+            <li><h2>Examples</h2></li>
         </ul>
     </div>
     <div class="row">
         <a href="http://transcirrus.com" target="_blank" class="lead">TransCirrus Company Website</a>
+
         <div class="col-xs-12">
             <div class="row">
                 <div class="col-xs-12 col-sm-6"><a href="" title="TransCirrus 'Hero' Header"><img
