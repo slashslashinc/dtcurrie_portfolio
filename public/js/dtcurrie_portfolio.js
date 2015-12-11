@@ -76,7 +76,8 @@ function checkNavbar() {
                 }
                 // remove fade-out class if nav bar has faded out before and fade-in nav bar
                 navbar.removeClass('fade-out').addClass('fade-in');
-            } else if (windowTop < (checkAgainst.offset().top + checkAgainst.height()) && !navbar.hasClass('fade-out')) {
+            } else if (windowTop < (checkAgainst.offset().top + checkAgainst.height())
+                && !navbar.hasClass('fade-out') && !navbar.hasClass('hidden-animated')) {
                 // if the top of the window is above the bottom of checkAgainst and the nav bar isn't fading out
                 // remove fade-in class if nav bar has faded in before and fade-out nav bar
                 navbar.removeClass('fade-in').addClass('fade-out');

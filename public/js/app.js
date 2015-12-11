@@ -15,6 +15,10 @@ angular.module('MainCtrl', [])
             {"value": "Technology", "id": "techs"},
             {"value": "Examples", "id": "exams"}
         ];
+
+        $scope.$on("$viewContentLoaded", function () {
+            checkNavbar();
+        });
     })
     .controller('ResumeController', function ($scope, $rootScope) {
         $rootScope.page = "Resume";
@@ -25,6 +29,10 @@ angular.module('MainCtrl', [])
             {"value": "Skills & Expertise", "id": "skex"},
             {"value": "References", "id": "refs"}
         ];
+
+        $scope.$on("$viewContentLoaded", function () {
+            showNavbar();
+        });
     })
     .controller('NavController', function ($scope, $rootScope) {
         $rootScope.$watchCollection('links', function (newLinks) {
@@ -60,7 +68,6 @@ portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider
             controller: "HomeController",
             onEnter: function () {
                 checkBackToTop();
-                checkNavbar();
             },
             onExit: function () {
                 resetToTop();
@@ -72,7 +79,6 @@ portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider
             controller: "ResumeController",
             onEnter: function () {
                 checkBackToTop();
-                showNavbar();
             },
             onExit: function () {
                 resetToTop();
