@@ -4,7 +4,8 @@ var express = require("express"),
     bodyParser = require("body-parser"),
     methodOverride = require('method-override'),
     app = express(),
-    port = process.env.PORT || 8000,    // Port
+    port = process.env.PORT || 3000,    // Port
+    server = require('http').createServer(app),
     path = require('path'),
     publicPath = path.join(__dirname, '../public');
 
@@ -23,9 +24,9 @@ app.use('/img', express.static(publicPath + '/img'));
 app.use('/libs', express.static(publicPath + '/libs'));
 app.use('/views', express.static(publicPath + '/views'));
 
+server.listen(port);
+
 app.all('/*', function(req, res) {
     // Just send the index.html for other files to support HTML5Mode
     res.sendFile('/index.html', { root: publicPath });
 });
-
-app.listen(port);
