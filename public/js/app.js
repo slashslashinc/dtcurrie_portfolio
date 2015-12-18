@@ -57,8 +57,7 @@ angular.module('MainCtrl', [])
         };
     });
 
-portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactory) {
-    $urlMatcherFactory.caseInsensitive(true);
+portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     // For any unmatched url, redirect to /state1
     $urlRouterProvider.otherwise("/home");
     // Now set up the states
