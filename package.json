@@ -13,7 +13,6 @@
     "grunt": "latest",
     "btoa": "latest",
     "glob": "latest",
-    "grunt": "latest",
     "grunt-autoprefixer": "latest",
     "grunt-contrib-clean": "latest",
     "grunt-contrib-compress": "latest",
@@ -40,5 +39,8 @@
     "markdown-it": "latest",
     "npm-shrinkwrap": "latest",
     "time-grunt": "latest"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "^0.7.0"
   }
 }

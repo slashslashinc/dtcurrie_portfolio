@@ -54,7 +54,8 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+                sourceMap: true
             },
             dist: {
                 files: {
@@ -138,7 +139,7 @@ module.exports = function (grunt) {
             fontAwesomeCss: {
                 expand: true,
                 cwd: 'libs/font-awesome/css',
-                src: ['font-awesome.min.css','font-awesome.css.map'],
+                src: ['font-awesome.min.css', 'font-awesome.css.map'],
                 dest: 'public/css'
             },
             angularJs: {
@@ -160,6 +161,10 @@ module.exports = function (grunt) {
                 dest: 'public/js'
             }
         },
+        clean: {
+            js: ["public/js/*.js", "!public/js/*.min.js"],
+            css: ["public/css/*.css", "!public/css/*.min.css"]
+        },
         watch: {
             files: ['<%= jshint.files %>'],
             tasks: ['jshint']
@@ -173,7 +178,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less', 'cssmin', 'copy']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less', 'cssmin', 'copy', 'clean']);
 
 };
