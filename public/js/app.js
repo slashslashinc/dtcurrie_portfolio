@@ -84,6 +84,6 @@ portfolio.config(function ($stateProvider, $urlRouterProvider, $locationProvider
                 resetToTop();
             }
         });
-    //// use the HTML5 History API [disabled for github pages]
-    //$locationProvider.html5Mode(true);
+    // use the HTML5 History API [disabled for github pages]
+    $locationProvider.html5Mode(true);
 });
