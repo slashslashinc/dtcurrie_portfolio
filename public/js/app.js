@@ -18,6 +18,7 @@ angular.module('MainCtrl', [])
 
         $scope.$on("$viewContentLoaded", function () {
             checkNavbar();
+            showFooter();
         });
     })
     .controller('ResumeController', function ($scope, $rootScope) {
@@ -32,6 +33,7 @@ angular.module('MainCtrl', [])
 
         $scope.$on("$viewContentLoaded", function () {
             showNavbar();
+            showFooter();
         });
     })
     .controller('NavController', function ($scope, $rootScope) {

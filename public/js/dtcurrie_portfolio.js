@@ -94,6 +94,10 @@ function showNavbar() {
     $("#mainNav").removeClass("hidden-animated fade-out").addClass('fade-in');
 }
 
+function showFooter() {
+    $("footer").removeClass("hidden-animated fade-out").addClass('fade-in');
+}
+
 // if the window does no require vertical scrolling, hide the back-to-top button
 function checkBackToTop() {
     if (document.body.scrollHeight > window.innerHeight && $(window).scrollTop() > 0) {

@@ -1,4 +1,9 @@
-/* --------------------- page animations */
+/*
+ public/css/raw/animations.css
+ Devin T. Currie
+ */
+
+ /* --------------------- page animations */
 
 /* hide scrolling and elements hidden waiting to be animated */
 .scrolling, .hidden-animated {
@@ -166,6 +171,11 @@
         opacity: 1;
     }
 }
+/*
+ public/css/raw/fonts.css
+ Devin T. Currie
+ */
+
 @font-face {
     font-family: 'tech-icons';
     src:url('../fonts/tech-icons.eot?9avrkx');
@@ -233,6 +243,11 @@
     content: "\f14c";
 }
 
+
+/*
+ public/css/raw/style.css
+ Devin T. Currie
+ */
 
 body.modal-open {
     overflow: visible;
