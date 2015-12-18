@@ -1,3 +1,8 @@
+/*
+ server/server.js
+ Devin T. Currie
+*/
+
 // Modules
 var express = require("express"),
     cors = require("cors"),

@@ -1,3 +1,8 @@
+/*
+ Gruntfile.js
+ Devin T. Currie
+ */
+
 module.exports = function (grunt) {
     'use strict';
 

@@ -1,4 +1,9 @@
-/* --------------------- page animations */
+/*
+ public/css/raw/animations.css
+ Devin T. Currie
+ */
+
+ /* --------------------- page animations */
 
 /* hide scrolling and elements hidden waiting to be animated */
 .scrolling, .hidden-animated {
