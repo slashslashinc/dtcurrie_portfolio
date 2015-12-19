@@ -27,7 +27,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             js: {
-                src: ['public/js/raw/script.js', 'public/js/raw/modernizr.min.js'],
+                src: ['public/js/raw/script.js', 'public/js/raw/app.js', 'public/js/raw/modernizr.min.js'],
                 dest: 'public/js/<%= pkg.name %>.js'
             },
             css: {
