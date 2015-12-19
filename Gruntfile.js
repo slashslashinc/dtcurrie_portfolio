@@ -25,17 +25,26 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        less: {
+            compileCore: {
+                options: {
+                    strictMath: true
+                },
+                src: 'libs/bootstrap/less/bootstrap.less',
+                dest: 'public/css/raw/bootstrap.css'
+            },
+            compileTheme: {
+                options: {
+                    strictMath: true
+                },
+                src: 'libs/bootstrap/less/theme.less',
+                dest: 'public/css/raw/<%= pkg.name %>-theme.css'
+            }
+        },
         concat: {
             js: {
-                src: 'public/js/raw/*.js',
-                dest: 'public/js/<%= pkg.name %>.js'
-            },
-            css: {
-                src: 'public/css/raw/*.css',
-                dest: 'public/css/<%= pkg.name %>-style.css'
-            },
-            bootstrap: {
                 src: [
+                    'public/js/raw/*.js',
                     'libs/bootstrap/js/transition.js',
                     'libs/bootstrap/js/alert.js',
                     'libs/bootstrap/js/button.js',
@@ -49,7 +58,11 @@ module.exports = function (grunt) {
                     'libs/bootstrap/js/tab.js',
                     'libs/bootstrap/js/affix.js'
                 ],
-                dest: 'public/js/bootstrap.js'
+                dest: 'public/js/<%= pkg.name %>.js'
+            },
+            css: {
+                src: ['public/css/raw/*.css', 'libs/font-awesome/css/font-awesome.min.css'],
+                dest: 'public/css/<%= pkg.name %>.css'
             }
         },
         uglify: {
@@ -61,27 +74,6 @@ module.exports = function (grunt) {
                 files: {
                     'public/js/<%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
                 }
-            },
-            bootstrap: {
-                files: {
-                    'public/js/bootstrap.min.js': ['<%= concat.bootstrap.dest %>']
-                }
-            }
-        },
-        less: {
-            compileCore: {
-                options: {
-                    strictMath: true
-                },
-                src: 'libs/bootstrap/less/bootstrap.less',
-                dest: 'public/css/bootstrap.css'
-            },
-            compileTheme: {
-                options: {
-                    strictMath: true
-                },
-                src: 'libs/bootstrap/less/theme.less',
-                dest: 'public/css/<%= pkg.name %>.css'
             }
         },
         cssmin: {
@@ -91,29 +83,9 @@ module.exports = function (grunt) {
                 advanced: false,
                 sourceMap: true
             },
-            minifyBootstrap: {
-                src: 'public/css/bootstrap.css',
-                dest: 'public/css/bootstrap.min.css'
-            },
-            minifyStyle: {
-                src: 'public/css/<%= pkg.name %>-style.css',
-                dest: 'public/css/<%= pkg.name %>-style.min.css'
-            },
-            minifyTheme: {
+            minifyCss: {
                 src: 'public/css/<%= pkg.name %>.css',
                 dest: 'public/css/<%= pkg.name %>.min.css'
-            }
-        },
-        jshint: {
-            files: ['Gruntfile.js', 'public/js/app.js', 'public/js/script.js'],
-            options: {
-                // options here to override JSHint defaults
-                globals: {
-                    jQuery: true,
-                    console: true,
-                    module: true,
-                    document: true
-                }
             }
         },
         copy: {
@@ -128,12 +100,6 @@ module.exports = function (grunt) {
                 cwd: 'libs/font-awesome/fonts/',
                 src: ['**'],
                 dest: 'public/fonts'
-            },
-            fontAwesomeCss: {
-                expand: true,
-                cwd: 'libs/font-awesome/css',
-                src: ['font-awesome.min.css', 'font-awesome.css.map'],
-                dest: 'public/css'
             },
             angularJs: {
                 expand: true,
@@ -157,6 +123,18 @@ module.exports = function (grunt) {
         clean: {
             js: ["public/js/*.js", "!public/js/*.min.js"],
             css: ["public/css/*.css", "!public/css/*.min.css"]
+        },
+        jshint: {
+            files: ['Gruntfile.js', 'public/js/app.js', 'public/js/script.js'],
+            options: {
+                // options here to override JSHint defaults
+                globals: {
+                    jQuery: true,
+                    console: true,
+                    module: true,
+                    document: true
+                }
+            }
         },
         watch: {
             files: ['<%= jshint.files %>'],
