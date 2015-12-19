@@ -27,12 +27,12 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             js: {
-                src: ['public/js/raw/script.js', 'public/js/raw/app.js', 'public/js/raw/modernizr.min.js'],
+                src: 'public/js/raw/*.js',
                 dest: 'public/js/<%= pkg.name %>.js'
             },
             css: {
-                src: ['public/css/raw/animations.css', 'public/css/raw/fonts.css', 'public/css/raw/style.css'],
-                dest: 'public/css/<%= pkg.name %>-theme.css'
+                src: 'public/css/raw/*.css',
+                dest: 'public/css/<%= pkg.name %>-style.css'
             },
             bootstrap: {
                 src: [
@@ -71,22 +71,14 @@ module.exports = function (grunt) {
         less: {
             compileCore: {
                 options: {
-                    strictMath: true,
-                    sourceMap: true,
-                    outputSourceFiles: true,
-                    sourceMapURL: 'bootstrap.css.map',
-                    sourceMapFilename: 'public/css/bootstrap.css.map'
+                    strictMath: true
                 },
                 src: 'libs/bootstrap/less/bootstrap.less',
                 dest: 'public/css/bootstrap.css'
             },
             compileTheme: {
                 options: {
-                    strictMath: true,
-                    sourceMap: true,
-                    outputSourceFiles: true,
-                    sourceMapURL: '<%= pkg.name %>-theme.css.map',
-                    sourceMapFilename: 'public/css/<%= pkg.name %>-theme.css.map'
+                    strictMath: true
                 },
                 src: 'libs/bootstrap/less/theme.less',
                 dest: 'public/css/<%= pkg.name %>.css'
@@ -96,15 +88,16 @@ module.exports = function (grunt) {
             options: {
                 compatibility: 'ie8',
                 keepSpecialComments: '*',
-                advanced: false
+                advanced: false,
+                sourceMap: true
             },
             minifyBootstrap: {
                 src: 'public/css/bootstrap.css',
                 dest: 'public/css/bootstrap.min.css'
             },
             minifyStyle: {
-                src: 'public/css/<%= pkg.name %>-theme.css',
-                dest: 'public/css/<%= pkg.name %>-theme.min.css'
+                src: 'public/css/<%= pkg.name %>-style.css',
+                dest: 'public/css/<%= pkg.name %>-style.min.css'
             },
             minifyTheme: {
                 src: 'public/css/<%= pkg.name %>.css',
@@ -181,5 +174,4 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less', 'cssmin', 'copy', 'clean']);
-
 };
