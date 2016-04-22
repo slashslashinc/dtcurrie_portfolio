@@ -280,6 +280,7 @@ blockquote small {
 }
 @media (max-width: 480px) {
   .jumbotron-hero-image {
+    background-position: -100rem -40rem;
     background-position-x: -100rem;
     background-position-y: -40rem;
   }
@@ -305,6 +306,7 @@ blockquote small {
 }
 @media (min-width: 480px) and (max-width: 767px) {
   .jumbotron-hero-image {
+    background-position: -80rem -35rem;
     background-position-x: -80rem;
     background-position-y: -35rem;
   }
@@ -330,6 +332,7 @@ blockquote small {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .jumbotron-hero-image {
+    background-position: -70rem -35rem;
     background-position-x: -70rem;
     background-position-y: -35rem;
   }
@@ -355,6 +358,7 @@ blockquote small {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .jumbotron-hero-image {
+    background-position: -45rem -35rem;
     background-position-x: -45rem;
     background-position-y: -35rem;
   }
@@ -380,6 +384,7 @@ blockquote small {
 }
 @media (min-width: 1200px) and (max-width: 1439px) {
   .jumbotron-hero-image {
+    background-position: -30rem -35rem;
     background-position-x: -30rem;
     background-position-y: -35rem;
   }
@@ -405,6 +410,7 @@ blockquote small {
 }
 @media (min-width: 1440px) {
   .jumbotron-hero-image {
+    background-position: 0 -35rem;
     background-position-y: -35rem;
   }
   .jumbotron-hero-image .text {
