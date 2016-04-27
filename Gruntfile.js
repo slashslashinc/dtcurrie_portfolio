@@ -1,7 +1,4 @@
-/*
- Gruntfile.js
- Devin T. Currie
- */
+/* Gruntfile.js - Devin T. Currie */
 
 module.exports = function (grunt) {
     'use strict';
@@ -13,7 +10,7 @@ module.exports = function (grunt) {
         return string.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
     };
 
-    var fs = require('fs');
+    // Bootstrap config
     var path = require('path');
     var configBridge = grunt.file.readJSON('./libs/bootstrap/grunt/configBridge.json', {encoding: 'utf8'});
 
@@ -23,109 +20,13 @@ module.exports = function (grunt) {
         });
     });
 
+    // Grunt task config
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        less: {
-            compileCore: {
-                options: {
-                    strictMath: true
-                },
-                src: 'libs/bootstrap/less/bootstrap.less',
-                dest: 'public/css/raw/bootstrap.css'
-            },
-            compileTheme: {
-                options: {
-                    strictMath: true
-                },
-                src: 'libs/bootstrap/less/theme.less',
-                dest: 'public/css/raw/<%= pkg.name %>-theme.css'
-            }
-        },
-        concat: {
-            js: {
-                src: [
-                    'public/js/raw/*.js',
-                    'libs/bootstrap/js/transition.js',
-                    'libs/bootstrap/js/alert.js',
-                    'libs/bootstrap/js/button.js',
-                    'libs/bootstrap/js/carousel.js',
-                    'libs/bootstrap/js/collapse.js',
-                    'libs/bootstrap/js/dropdown.js',
-                    'libs/bootstrap/js/modal.js',
-                    'libs/bootstrap/js/tooltip.js',
-                    'libs/bootstrap/js/popover.js',
-                    'libs/bootstrap/js/scrollspy.js',
-                    'libs/bootstrap/js/tab.js',
-                    'libs/bootstrap/js/affix.js'
-                ],
-                dest: 'public/js/<%= pkg.name %>.js'
-            },
-            css: {
-                src: ['public/css/raw/*.css', 'libs/font-awesome/css/font-awesome.min.css'],
-                dest: 'public/css/<%= pkg.name %>.css'
-            }
-        },
-        uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
-                sourceMap: true
-            },
-            dist: {
-                files: {
-                    'public/js/<%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
-                }
-            }
-        },
-        cssmin: {
-            options: {
-                compatibility: 'ie8',
-                keepSpecialComments: '*',
-                advanced: false,
-                sourceMap: true
-            },
-            minifyCss: {
-                src: 'public/css/<%= pkg.name %>.css',
-                dest: 'public/css/<%= pkg.name %>.min.css'
-            }
-        },
-        copy: {
-            bootstrapFonts: {
-                expand: true,
-                cwd: 'libs/bootstrap/fonts/',
-                src: ['**'],
-                dest: 'public/fonts'
-            },
-            fontAwesomeFonts: {
-                expand: true,
-                cwd: 'libs/font-awesome/fonts/',
-                src: ['**'],
-                dest: 'public/fonts'
-            },
-            angularJs: {
-                expand: true,
-                cwd: 'libs/angular',
-                src: ['angular.min.js', 'angular.min.js.map'],
-                dest: 'public/js'
-            },
-            angularUiRouterJs: {
-                expand: true,
-                cwd: 'libs/angular-ui-router/release',
-                src: 'angular-ui-router.min.js',
-                dest: 'public/js'
-            },
-            jquery: {
-                expand: true,
-                cwd: 'libs/jquery/dist/',
-                src: ['jquery.min.js', 'jquery.min.map'],
-                dest: 'public/js'
-            }
-        },
-        clean: {
-            js: ["public/js/*.js", "!public/js/*.min.js"],
-            css: ["public/css/*.css", "!public/css/*.min.css"]
-        },
+        // Check JS Code for formatting and errors
         jshint: {
-            files: ['Gruntfile.js', 'public/js/app.js', 'public/js/script.js'],
+            // Files to check
+            files: ['Gruntfile.js', 'assets/js/*.js', '!assets/js/*.min.js'],
             options: {
                 // options here to override JSHint defaults
                 globals: {
@@ -136,20 +37,191 @@ module.exports = function (grunt) {
                 }
             }
         },
+        // Compile LESS files
+        less: {
+            // Bootstrap Core
+            compileBootstrapCore: {
+                options: {
+                    strictMath: true
+                },
+                src: 'libs/bootstrap/less/bootstrap.less',
+                dest: 'assets/css/bootstrap.css'
+            },
+            // Custom Theme
+            compileBootstrapTheme: {
+                options: {
+                    strictMath: true
+                },
+                src: 'libs/bootstrap/less/theme.less',
+                dest: 'assets/css/<%= pkg.name %>-theme.css'
+            }//,
+            //// Custom Site Less
+            //compileSite: {
+            //    options: {
+            //        strictMath: true
+            //    },
+            //    src: 'assets/less/raw/site.less',
+            //    dest: 'assets/css/raw/site.css'
+            //}
+        },
+        // Uglify JS files
+        uglify: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets/js/',
+                    src: ['*.js', '!*.min.js'],
+                    dest: 'public/js/',
+                    rename: function(destBase, destPath) {
+                        return destBase+destPath.replace('.js', '.min.js');
+                    }
+                }]
+            }
+        },
+        // Minify CSS files
+        cssmin: {
+            options: {
+                compatibility: 'ie8',
+                keepSpecialComments: '*',
+                advanced: false,
+                sourceMap: true
+            },
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets/css/',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'public/css',
+                    ext: '.min.css'
+                }]
+            }
+        },
+        // Add banners to uglified/minified JS/CSS files
+        usebanner: {
+            addBanners: {
+                options: {
+                    position: 'top',
+                    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */',
+                    linebreak: true
+                },
+                files: {
+                    src: [
+                        'public/css/*.min.css',
+                        'public/css/*.min.js'
+                    ]
+                }
+            }
+        },
+        // Add package version to link/script calls in index.html
+        cache_control: {
+            index: {
+                source: "public/index.html",
+                options: {
+                    version: "<%= pkg.version %>",
+                    links: true,
+                    scripts: true,
+                    replace: true,
+                    ignoreCDN: true
+                }
+            }
+        },
+        // Copy lib fonts to public folder
+        copy: {
+            jQueryJS: {
+                expand: true,
+                cwd: 'libs/jquery/dist/',
+                src: ['jquery.min.*'],
+                dest: 'public/js'
+            },
+            angularJS: {
+                expand: true,
+                cwd: 'libs/angular/',
+                src: ['angular.min.*', '!angular.min.js.gzip'],
+                dest: 'public/js'
+            },
+            angularUiRouterJS: {
+                expand: true,
+                cwd: 'libs/angular-ui-router/release',
+                src: ['angular-ui-router.min.*'],
+                dest: 'public/js'
+            },
+            bootstrapJS: {
+                expand: true,
+                cwd: 'libs/bootstrap/dist/js/',
+                src: ['bootstrap.min.js'],
+                dest: 'public/js'
+            },
+            bootstrapFonts: {
+                expand: true,
+                cwd: 'libs/bootstrap/dist/fonts/',
+                src: ['**'],
+                dest: 'public/fonts'
+            },
+            fontawesomeCSS: {
+                expand: true,
+                cwd: 'libs/font-awesome/css/',
+                src: ['font-awesome.css.map', 'font-awesome.min.css'],
+                dest: 'public/css'
+            },
+            fontawesomeFonts: {
+                expand: true,
+                cwd: 'libs/font-awesome/fonts/',
+                src: ['*', '!4.4.0'],
+                dest: 'public/fonts'
+            }
+        },
+        // Minify Images
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets/imgs/',
+                    src: ['**/*.{png,jpg,jpeg,gif}'],
+                    dest: 'public/imgs/'
+                }]
+            }
+        },
         watch: {
-            files: ['<%= jshint.files %>'],
-            tasks: ['jshint']
+            bootstrap: {
+                files: ['libs/bootstrap/less/theme.less', 'libs/bootstrap/less/variables.less'],
+                tasks: ['less:compileBootstrapTheme']
+            },
+            js: {
+                files: ['assets/js/*.js'],
+                tasks: ['uglify']
+            },
+            css: {
+                files: ['assets/css/*.css'],
+                tasks: ['cssmin']
+            },
+            //less: {
+            //    files: ['assets/less/raw/*.less'],
+            //    tasks: ['less:compileSite']
+            //},
+            fonts: {
+                files: ['assets/fonts/*.css'],
+                tasks: ['cssmin', 'copy:fontawesomeFonts', 'copy:bootstrapFonts']
+            },
+            images: {
+                files: ['assets/imgs/*'],
+                tasks: ['imagemin']
+            }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-banner');
+    grunt.loadNpmTasks('grunt-cache-control');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less', 'cssmin', 'copy', 'clean']);
+    // Register tasks, run in order declared
+    grunt.registerTask('default', ['jshint', 'less', 'uglify', 'cssmin', 'copy', 'usebanner', 'cache_control', 'imagemin', 'watch']);
 };

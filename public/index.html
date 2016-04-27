@@ -11,36 +11,47 @@
 Thanks for checking out my web portfolio.  This site was generated using AngularJs on top of NodeJs using ExpressJs.
 If you want to see the complete code, check out the git repository here: https://github.com/DTCurrie/dtcurrie_portfolio
 
-Please feel free to email me any questons, comments or suggestions you may have at devin@devintcurrie.com
+Please feel free to email me any questions, comments or suggestions you may have at devin@devintcurrie.com
 
 -->
 
 <!DOCTYPE html>
-<html lang="en" ng-app="portfolio" class="teal">
+<html lang="en" ng-app="portfolio" class="teal" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Web portfolio and resume for Devin T. Currie">
+    <meta name="title" content="Devin T. Currie - Web Developer">
+    <meta name="description"
+          content="Web portfolio and resume for Devin T. Currie. Available to work on Front-End and Interactive Web Development projects. Resume Available to download.">
     <meta name="author" content="Devin Currie">
+
+    <meta property="og:url"
+          content="http://www.devintcurrie.com"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Devin T. Currie - Web Developer"/>
+    <meta property="og:description" content="Web portfolio and resume for Devin T. Currie. Available to work on Front-End and Interactive Web Development projects. Resume Available to download."/>
+    <meta property="og:image" content="http://www.devintcurrie.com/imgs/portrait-bg.jpg"/>
+
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 
     <title>Devin T. Currie - Web Developer</title>
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="css/dtcurrie_portfolio.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=0.2.0">
 
-    <!-- JavaScript
-    ================================================== -->
-    <script src="js/jquery.min.js"></script>
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css?v=0.2.0">
 
-    <!-- Angular core JavaScript -->
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-ui-router.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="js/dtcurrie_portfolio.min.js"></script>
+    <!-- Custom -->
+    <link rel="stylesheet" href="css/dtcurrie_portfolio-theme.min.css?v=0.2.0">
+    <link rel="stylesheet" href="css/fonts.min.css?v=0.2.0">
+    <link rel="stylesheet" href="css/style.min.css?v=0.2.0">
+    <link rel="stylesheet" href="css/animations.min.css?v=0.2.0">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -105,8 +116,8 @@ Please feel free to email me any questons, comments or suggestions you may have 
         <div class="pull-left">
             <ul class="list-unstyled list-inline">
                 <li>
-                    <a href="mailto:devintcurrie@gmail.com"><i class="fa fa-envelope-o text-warning"></i>
-                        devintcurrie@gmail.com</a>
+                    <a href="mailto:devin@devintcurrie.com"><i class="fa fa-envelope-o text-warning"></i>
+                        devin@devintcurrie.com</a>
                 </li>
                 <li>
                     <p class="text-primary"><i class="fa fa-phone text-warning"></i> 843.907.1121</p>
@@ -122,12 +133,40 @@ Please feel free to email me any questons, comments or suggestions you may have 
 </body>
 </html>
 
+<!-- JavaScript
+================================================== -->
+<!-- jQuery -->
+<script src="js/jquery.min.js?v=0.2.0"></script>
+
+<!-- Angular core JavaScript -->
+<script src="js/angular.min.js?v=0.2.0"></script>
+<script src="js/angular-ui-router.min.js?v=0.2.0"></script>
+
+<!-- Angular App -->
+<script src="js/app.min.js?v=0.2.0"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="js/bootstrap.min.js?v=0.2.0"></script>
+
+<!-- Custom JavaScript -->
+<script src="js/script.min.js?v=0.2.0"></script>
+
+<!-- Modernizr -->
+<script src="js/modernizr.min.js?v=0.2.0"></script>
+
 <!-- Google Analytics -->
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-71575461-1', 'auto');
     ga('send', 'pageview');
